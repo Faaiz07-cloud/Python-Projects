@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "title": "Python Basics",
+        "author": "John Smith",
+        "status": "Available"
+    },
+    {
+        "id": 2,
+        "title": "Data Structures",
+        "author": "Alice Brown",
+        "status": "Issued"
+    },
+    {
+        "id": 3,
+        "title": "Machine Learning",
+        "author": "Andrew Ng",
+        "status": "Issued"
+    },
+    {
+        "id": 4,
+        "title": "Database Systems",
+        "author": "C. J. Date",
+        "status": "Available"
+    },
+    {
+        "id": 5,
+        "title": "Operating Systems",
+        "author": "Abraham Silberschatz",
+        "status": "Issued"
+    },
+    {
+        "id": 6,
+        "title": "Computer Networks",
+        "author": "Andrew S. Tanenbaum",
+        "status": "Available"
+    },
+    {
+        "id": 7,
+        "title": "Artificial Intelligence",
+        "author": "Stuart Russell",
+        "status": "Available"
+    },
+    {
+        "id": 8,
+        "title": "Software Engineering",
+        "author": "Ian Sommerville",
+        "status": "Issued"
+    },
+    {
+        "id": 9,
+        "title": "Web Development",
+        "author": "Jon Duckett",
+        "status": "Available"
+    },
+    {
+        "id": 10,
+        "title": "Cyber Security",
+        "author": "William Stallings",
+        "status": "Available"
+    },
+    {
+        "id": 11,
+        "title": "Dashing Horses",
+        "author": "Chris",
+        "status": "Available"
+    }
+]

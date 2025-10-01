@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "title": "Python Basics",
+        "author": "John Smith",
+        "status": "Available"
+    },
+    {
+        "id": 2,
+        "title": "Advanced Python",
+        "author": "John Smith",
+        "status": "Issued"
+    },
+    {
+        "id": 3,
+        "title": "Data Structures",
+        "author": "Alice Brown",
+        "status": "Available"
+    },
+    {
+        "id": 4,
+        "title": "Algorithms",
+        "author": "Alice Brown",
+        "status": "Issued"
+    },
+    {
+        "id": 5,
+        "title": "Machine Learning",
+        "author": "Andrew Ng",
+        "status": "Available"
+    },
+    {
+        "id": 6,
+        "title": "Deep Learning",
+        "author": "Andrew Ng",
+        "status": "Available"
+    },
+    {
+        "id": 7,
+        "title": "Database Systems",
+        "author": "C. J. Date",
+        "status": "Available"
+    },
+    {
+        "id": 8,
+        "title": "SQL Essentials",
+        "author": "C. J. Date",
+        "status": "Available"
+    },
+    {
+        "id": 9,
+        "title": "Computer Networks",
+        "author": "Andrew S. Tanenbaum",
+        "status": "Issued"
+    },
+    {
+        "id": 10,
+        "title": "Operating Systems",
+        "author": "Andrew S. Tanenbaum",
+        "status": "Issued"
+    },
+    {
+        "id": 11,
+        "title": "Artificial Intelligence",
+        "author": "Stuart Russell",
+        "status": "Available"
+    },
+    {
+        "id": 12,
+        "title": "AI Modern Approach",
+        "author": "Stuart Russell",
+        "status": "Issued"
+    },
+    {
+        "id": 13,
+        "title": "Software Engineering",
+        "author": "Ian Sommerville",
+        "status": "Available"
+    },
+    {
+        "id": 14,
+        "title": "Agile Development",
+        "author": "Ian Sommerville",
+        "status": "Issued"
+    },
+    {
+        "id": 15,
+        "title": "Web Development",
+        "author": "Jon Duckett",
+        "status": "Issued"
+    },
+    {
+        "id": 16,
+        "title": "HTML & CSS",
+        "author": "Jon Duckett",
+        "status": "Issued"
+    },
+    {
+        "id": 17,
+        "title": "Cyber Security",
+        "author": "William Stallings",
+        "status": "Available"
+    },
+    {
+        "id": 18,
+        "title": "Network Security",
+        "author": "William Stallings",
+        "status": "Issued"
+    },
+    {
+        "id": 19,
+        "title": "Cloud Computing",
+        "author": "Rajkumar Buyya",
+        "status": "Issued"
+    },
+    {
+        "id": 20,
+        "title": "Big Data",
+        "author": "Rajkumar Buyya",
+        "status": "Available"
+    },
+    {
+        "id": 21,
+        "title": "Intro to Programming",
+        "author": "Mark Lee",
+        "status": "Available"
+    },
+    {
+        "id": 22,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "status": "Available"
+    },
+    {
+        "id": 23,
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "status": "Issued"
+    }
+]

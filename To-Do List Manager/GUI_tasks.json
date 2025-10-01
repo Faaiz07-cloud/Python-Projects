@@ -1,0 +1,62 @@
+[
+    {
+        "Task": "Buy groceries (vegetables, milk, bread, eggs).",
+        "Completed": false
+    },
+    {
+        "Task": "Do laundry.",
+        "Completed": false
+    },
+    {
+        "Task": "Pay utility bills (electricity, internet, gas).",
+        "Completed": true
+    },
+    {
+        "Task": "Cook dinner or prep meals.",
+        "Completed": false
+    },
+    {
+        "Task": "Revise yesterday\u2019s notes.",
+        "Completed": true
+    },
+    {
+        "Task": "Watch 1 tutorial video.",
+        "Completed": false
+    },
+    {
+        "Task": "Practice interview questions (1\u20132 daily).",
+        "Completed": false
+    },
+    {
+        "Task": "Work on a side project for 1 hour.",
+        "Completed": false
+    },
+    {
+        "Task": "Update project progress in tracker.",
+        "Completed": true
+    },
+    {
+        "Task": "Prepare report/slides.",
+        "Completed": false
+    },
+    {
+        "Task": "Exercise (walk/run/stretch 20\u201330 mins).",
+        "Completed": false
+    },
+    {
+        "Task": "Meditate / deep breathing (10 mins).",
+        "Completed": true
+    },
+    {
+        "Task": "Listen to music or read for relaxation.",
+        "Completed": false
+    },
+    {
+        "Task": "Attend meeting / sync with team.",
+        "Completed": true
+    },
+    {
+        "Task": "Eat 2 servings of fruits.",
+        "Completed": false
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "ID": 1,
+        "Date": "2025-08-29",
+        "Category": "Travel",
+        "Description": "Travel Expense including fare, hotel rent etc",
+        "Amount": 300000,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 2,
+        "Date": "2025-10-27",
+        "Category": "Education",
+        "Description": "Books, pen, marker, pencil etc",
+        "Amount": 2400,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 3,
+        "Date": "2025-6-14",
+        "Category": "Other",
+        "Description": "Not Interested",
+        "Amount": 2000,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 4,
+        "Date": "2025-8-16",
+        "Category": "Other",
+        "Description": "Optional",
+        "Amount": 2980,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 5,
+        "Date": "2025-09-17",
+        "Category": "Travel",
+        "Description": "About Fare",
+        "Amount": 2900,
+        "Payment_method": "Wallet"
+    },
+        {
+        "ID": 6,
+        "Date": "2025-09-01",
+        "Category": "Food",
+        "Description": "Lunch and dinner at restaurant",
+        "Amount": 3500,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 7,
+        "Date": "2025-09-05",
+        "Category": "Travel",
+        "Description": "Taxi fare to airport",
+        "Amount": 2200,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 8,
+        "Date": "2025-09-09",
+        "Category": "Entertainment",
+        "Description": "Movie tickets and snacks",
+        "Amount": 1800,
+        "Payment_method": "Wallet"
+    },
+    {
+        "ID": 9,
+        "Date": "2025-09-12",
+        "Category": "Education",
+        "Description": "Online course subscription",
+        "Amount": 4500,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 10,
+        "Date": "2025-09-15",
+        "Category": "Food",
+        "Description": "Groceries for the week",
+        "Amount": 12500,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 11,
+        "Date": "2025-09-20",
+        "Category": "Health",
+        "Description": "Doctor consultation and medicines",
+        "Amount": 6200,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 12,
+        "Date": "2025-09-22",
+        "Category": "Other",
+        "Description": "Charity donation",
+        "Amount": 5000,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 13,
+        "Date": "2025-09-25",
+        "Category": "Travel",
+        "Description": "Bus pass recharge",
+        "Amount": 1200,
+        "Payment_method": "Wallet"
+    },
+    {
+        "ID": 14,
+        "Date": "2025-09-28",
+        "Category": "Entertainment",
+        "Description": "Music concert ticket",
+        "Amount": 7800,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 15,
+        "Date": "2025-09-30",
+        "Category": "Food",
+        "Description": "Snacks and beverages",
+        "Amount": 950,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 16,
+        "Date": "2025-10-02",
+        "Category": "Travel",
+        "Description": "Petrol refill",
+        "Amount": 4200,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 17,
+        "Date": "2025-10-04",
+        "Category": "Education",
+        "Description": "Tuition fee installment",
+        "Amount": 28000,
+        "Payment_method": "Bank Transfer"
+    },
+    {
+        "ID": 18,
+        "Date": "2025-10-06",
+        "Category": "Other",
+        "Description": "Gift purchase",
+        "Amount": 3400,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 19,
+        "Date": "2025-10-08",
+        "Category": "Health",
+        "Description": "Gym membership monthly fee",
+        "Amount": 7000,
+        "Payment_method": "Wallet"
+    },
+    {
+        "ID": 20,
+        "Date": "2025-10-11",
+        "Category": "Entertainment",
+        "Description": "Streaming service subscription",
+        "Amount": 1200,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 21,
+        "Date": "2025-10-14",
+        "Category": "Food",
+        "Description": "Breakfast and coffee",
+        "Amount": 600,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 22,
+        "Date": "2025-10-17",
+        "Category": "Travel",
+        "Description": "Flight ticket for business trip",
+        "Amount": 58000,
+        "Payment_method": "Bank Transfer"
+    },
+    {
+        "ID": 23,
+        "Date": "2025-10-20",
+        "Category": "Education",
+        "Description": "Stationery and notebooks",
+        "Amount": 1800,
+        "Payment_method": "Cash"
+    },
+    {
+        "ID": 24,
+        "Date": "2025-10-23",
+        "Category": "Other",
+        "Description": "Mobile phone repair",
+        "Amount": 4500,
+        "Payment_method": "Card"
+    },
+    {
+        "ID": 25,
+        "Date": "2025-10-26",
+        "Category": "Health",
+        "Description": "Medical test charges",
+        "Amount": 8500,
+        "Payment_method": "Cash"
+    }
+]

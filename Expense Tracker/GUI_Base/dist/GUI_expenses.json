@@ -1,0 +1,233 @@
+[
+    {
+        "date": "12-6-2025",
+        "category": "Food",
+        "amount": "3000",
+        "mode": "Cash",
+        "details": "Food Bill"
+    },
+    {
+        "date": "12-4-2025",
+        "category": "Travel",
+        "amount": "25000",
+        "mode": "Cash",
+        "details": "Travelling Bills"
+    },
+    {
+        "date": "28-10-2025",
+        "category": "Gaming",
+        "amount": "200000",
+        "mode": "Credit Card",
+        "details": "Xbox Games"
+    },
+    {
+        "date": "12-4-2024",
+        "category": "Electircity",
+        "amount": "2460",
+        "mode": "Cash",
+        "details": "Bills"
+    },
+    {
+        "date": "12-9-2025",
+        "category": "Other",
+        "amount": "2490",
+        "mode": "Cash",
+        "details": "Educational Bills"
+    },
+    {
+        "date": "12-6-2025",
+        "category": "Clothing",
+        "amount": "2340",
+        "mode": "Cash",
+        "details": "Shirt, Jeans etc"
+    },
+    {
+        "date": "15-7-2025",
+        "category": "Food",
+        "amount": "4200",
+        "mode": "Wallet",
+        "details": "Dinner with friends"
+    },
+    {
+        "date": "20-8-2025",
+        "category": "Travel",
+        "amount": "1800",
+        "mode": "Cash",
+        "details": "Rickshaw fare"
+    },
+    {
+        "date": "05-9-2025",
+        "category": "Health",
+        "amount": "5600",
+        "mode": "Credit Card",
+        "details": "Medicines"
+    },
+    {
+        "date": "17-11-2025",
+        "category": "Education",
+        "amount": "30000",
+        "mode": "Bank Transfer",
+        "details": "Semester Fee"
+    },
+    {
+        "date": "01-12-2025",
+        "category": "Entertainment",
+        "amount": "1500",
+        "mode": "Wallet",
+        "details": "Movie Ticket"
+    },
+    {
+        "date": "03-10-2025",
+        "category": "Food",
+        "amount": "890",
+        "mode": "Cash",
+        "details": "Snacks"
+    },
+    {
+        "date": "14-5-2025",
+        "category": "Shopping",
+        "amount": "7500",
+        "mode": "Cash",
+        "details": "Clothes for party"
+    },
+    {
+        "date": "25-8-2025",
+        "category": "Electronics",
+        "amount": "45000",
+        "mode": "Credit Card",
+        "details": "Mobile Phone"
+    },
+    {
+        "date": "09-3-2025",
+        "category": "Bills",
+        "amount": "3500",
+        "mode": "Cash",
+        "details": "Gas Bill"
+    },
+    {
+        "date": "11-2-2025",
+        "category": "Travel",
+        "amount": "9500",
+        "mode": "Card",
+        "details": "Train Ticket"
+    },
+    {
+        "date": "22-6-2025",
+        "category": "Entertainment",
+        "amount": "2000",
+        "mode": "Wallet",
+        "details": "Concert Ticket"
+    },
+    {
+        "date": "19-1-2025",
+        "category": "Health",
+        "amount": "7800",
+        "mode": "Cash",
+        "details": "Lab Tests"
+    },
+    {
+        "date": "28-2-2025",
+        "category": "Food",
+        "amount": "1450",
+        "mode": "Cash",
+        "details": "Breakfast"
+    },
+    {
+        "date": "30-3-2025",
+        "category": "Clothing",
+        "amount": "5600",
+        "mode": "Wallet",
+        "details": "Shoes"
+    },
+    {
+        "date": "08-4-2025",
+        "category": "Other",
+        "amount": "2200",
+        "mode": "Cash",
+        "details": "Stationery"
+    },
+    {
+        "date": "19-5-2025",
+        "category": "Travel",
+        "amount": "4000",
+        "mode": "Cash",
+        "details": "Fuel for car"
+    },
+    {
+        "date": "10-6-2025",
+        "category": "Bills",
+        "amount": "2700",
+        "mode": "Cash",
+        "details": "Water Bill"
+    },
+    {
+        "date": "21-7-2025",
+        "category": "Entertainment",
+        "amount": "1300",
+        "mode": "Wallet",
+        "details": "Online Games"
+    },
+    {
+        "date": "05-8-2025",
+        "category": "Food",
+        "amount": "6700",
+        "mode": "Cash",
+        "details": "Family Dinner"
+    },
+    {
+        "date": "13-9-2025",
+        "category": "Travel",
+        "amount": "85000",
+        "mode": "Bank Transfer",
+        "details": "International Flights"
+    },
+    {
+        "date": "27-10-2025",
+        "category": "Clothing",
+        "amount": "3200",
+        "mode": "Card",
+        "details": "T-Shirts"
+    },
+    {
+        "date": "12-11-2025",
+        "category": "Health",
+        "amount": "12500",
+        "mode": "Cash",
+        "details": "Hospital Fee"
+    },
+    {
+        "date": "19-12-2025",
+        "category": "Shopping",
+        "amount": "9000",
+        "mode": "Credit Card",
+        "details": "Winter Clothes"
+    },
+    {
+        "date": "29-12-2025",
+        "category": "Electronics",
+        "amount": "78000",
+        "mode": "Credit Card",
+        "details": "Laptop"
+    },
+    {
+        "date": "12-4-2025",
+        "category": "Cars",
+        "amount": "2300",
+        "mode": "Cash",
+        "details": "Car Wash"
+    },
+    {
+        "date": "25-4-2025",
+        "category": "Bike",
+        "amount": "2700",
+        "mode": "Cash",
+        "details": "Bike Tuning etc"
+    },
+    {
+        "date": "23-8-2020",
+        "category": "Mobile",
+        "amount": "120",
+        "mode": "Cash",
+        "details": "Covers"
+    }
+]

@@ -1,0 +1,16 @@
+{
+    "10023": {
+        "Product_ID": "10023",
+        "Product_Name": "Watch",
+        "Product_Price": "23400",
+        "Product_Quantity": "2345",
+        "Product_Supplier": "Rolex"
+    },
+    "233432": {
+        "Product_ID": "233432",
+        "Product_Name": "Mats",
+        "Product_Price": "2344",
+        "Product_Quantity": "23",
+        "Product_Supplier": "Prada"
+    }
+}

@@ -1,0 +1,17 @@
+Blocking Socket:
+
+recv() / accept() wait until data or a connection arrives.
+Code execution pauses (freezes) while waiting.
+Simple to write and understand.
+Handles one client easily, but needs threads/processes for many clients.
+
+Non-Blocking Socket:
+
+recv() / accept() return immediately (error/empty if no data).
+Code execution keeps running, never stops.
+Requires extra error-handling.
+Good for high-performance apps (chat servers, games).
+Can handle many clients in a single loop using select/poll/async.
+
+By default, sockets are in blocking mode — functions like recv() and accept() will wait
+until data or a connection is available.

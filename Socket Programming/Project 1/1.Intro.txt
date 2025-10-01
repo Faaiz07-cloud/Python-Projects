@@ -1,0 +1,37 @@
+What is a Socket?
+A socket is like a doorway through which data enters and exits between two programs,
+usually over a network.
+
+Think of it as:
+
+One computer = Server
+Another computer = Client
+Both use sockets to connect, send, and receive data.
+
+Python provides a built-in module called 'socket' for network communication.
+
+Key Concepts:
+Term	                           Meaning
+Server	                           Waits (listens) for a client to connect.
+Client	                           Connects to the server.
+IP Address	                       It's an address of a device on the network
+                                   (like 127.0.0.1 for localhost).
+Port	                           A numbered “channel” for communication (like 8080, 1234,).
+TCP	                               Reliable connection (like a phone call).
+UDP	                               Faster, but no guarantee of delivery (like sending a letter).
+
+There are two methods of sending messages:
+1. send()
+2. sendall()
+
+send():
+client_socket.send(b"Hello World")
+send() tries to send data from the client socket.
+If the network or OS buffer is full, only part of the data may be sent.
+Returns the number of bytes actually sent.
+
+sendall():
+client_socket.sendall(b"Hello World")
+sendall() attempts to send the entire message from the client socket.
+If the network or OS buffer is full, it blocks the client code.
+The Python program will wait here until the full message reaches the server.

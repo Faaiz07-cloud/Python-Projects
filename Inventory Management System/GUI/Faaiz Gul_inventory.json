@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1001",
+        "name": "Nike",
+        "price": "25000",
+        "quantity": "34",
+        "supplier": "Nike",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/maksim-larin-NOpsC3nWTzY-unsplash.jpg"
+    },
+    {
+        "id": "1002",
+        "name": "Addidas",
+        "price": "24500",
+        "quantity": "12",
+        "supplier": "Addidas",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/fashion-shoes-sneakers.jpg"
+    },
+    {
+        "id": "10003",
+        "name": "Air Force",
+        "price": "456000",
+        "quantity": "56",
+        "supplier": "Jordan",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/usama-akram-kP6knT7tjn4-unsplash.jpg"
+    },
+    {
+        "id": "100034",
+        "name": "Prada",
+        "price": "456700",
+        "quantity": "45",
+        "supplier": "Prada",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/brown-leather-shoes.jpg"
+    },
+    {
+        "id": "23440",
+        "name": "T-Shirt",
+        "price": "2300",
+        "quantity": "35",
+        "supplier": "Nike",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/robert-richman-vcTKFYNZop4-unsplash.jpg"
+    },
+    {
+        "id": "23988",
+        "name": "Air Force ",
+        "price": "245800",
+        "quantity": "54",
+        "supplier": "Jordan",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/shoesoct7.jpg"
+    },
+    {
+        "id": "2345598",
+        "name": "Dockers",
+        "price": "345500",
+        "quantity": "2",
+        "supplier": "Dockers",
+        "image": "C:/Users/faaiz/PycharmProjects/Inventory Management System/GUI/Inventory Images/seeetz-OTHeFuAhNZ0-unsplash.jpg"
+    }
+]
