@@ -1,6 +1,7 @@
 # ---------- Modules ----------
 import os
 import json
+import sys
 import tkinter as tk
 from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
@@ -21,6 +22,17 @@ def save_expenses(expenses):
     with open(data_file, "w") as file:
         json.dump(expenses, file, indent=4)
 
+# Function to get the absolute path of a resource (e.g., image or data file)
+# Works both when running the script normally and when running as a PyInstaller .exe
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 # ---------- ExpenseTracker Class (GUI) ----------
 class ExpenseTracker:
     def __init__(self, root):
@@ -38,20 +50,20 @@ class ExpenseTracker:
         self.root.title("Expense Tracker")
         self.root.geometry("374x620")
 
-        img_1 = Image.open("Images/home_img.png")
+        img_1 = Image.open(resource_path("Images/home_img.png"))
         img_1 = img_1.resize((460,415))
         self.home_img = ImageTk.PhotoImage(img_1)
 
         label = tk.Label(self.root, image=self.home_img, bg="#ffffff")
         label.pack(pady=(32,0))
 
-        img2 = Image.open("Images/start_img.png")
+        img2 = Image.open(resource_path("Images/start_img.png"))
         img2 = img2.resize((120, 120))
         self.start_img = ImageTk.PhotoImage(img2)
         button = tk.Button(self.root, image=self.start_img, bg="#ffffff", relief="flat", bd=0, command=self.dashboard)
         button.place(x=62, y=457)
 
-        img_exit = Image.open("Images/exit.png")
+        img_exit = Image.open(resource_path("Images/exit.png"))
         img_exit = img_exit.resize((120, 120))
         self.exit_img = ImageTk.PhotoImage(img_exit)
         button = tk.Button(self.root, image=self.exit_img, bg="#ffffff", relief="flat", bd=0, command=self.root.destroy)
@@ -66,7 +78,7 @@ class ExpenseTracker:
         frame = tk.Frame(self.root, bg="#ffffff")
         frame.pack(pady=(20, 0), fill="x")
 
-        img3 = Image.open("Images/menu_bar_img.png")
+        img3 = Image.open(resource_path("Images/menu_bar_img.png"))
         img3 = img3.resize((44, 44))
         self.HomeImg = ImageTk.PhotoImage(img3)
         button = tk.Button(frame, image=self.HomeImg, bg="#ffffff", relief="flat", bd=0, command=self.show_home_page)
@@ -79,7 +91,7 @@ class ExpenseTracker:
         frame2 = tk.Frame(self.root, bg="#ffffff", width=275, height=150)
         frame2.place(x=47, y=70)
 
-        img4 = Image.open("Images/RoundCornerFrame.png")
+        img4 = Image.open(resource_path("Images/RoundCornerFrame.png"))
         img4 = img4.resize((275, 150))
         self.corner_frame = ImageTk.PhotoImage(img4)
         label3 = tk.Label(frame2, image=self.corner_frame, bg="#ffffff")
@@ -105,11 +117,11 @@ class ExpenseTracker:
                            relief="flat", bd=0, command=self.view_all_expenses)
         button.place(x=270, y=268)
 
-        img = Image.open("Images/DataFrame.png")
+        img = Image.open(resource_path("Images/DataFrame.png"))
         img = img.resize((320, 84))
         self.DataFrameImg = ImageTk.PhotoImage(img)
 
-        user_img = Image.open("Images/user.png")
+        user_img = Image.open(resource_path("Images/user.png"))
         user_img = user_img.resize((60, 60))
         self.User_Image = ImageTk.PhotoImage(user_img)
 
@@ -139,7 +151,7 @@ class ExpenseTracker:
             label = tk.Label(frame3, text=f"${exp['amount']}", bg="#e0e0e0", fg="#000000", font=("Calibri", 16, "bold"))
             label.place(x=239, y=25)
 
-        img5 = Image.open("Images/AddImage.png")
+        img5 = Image.open(resource_path("Images/AddImage.png"))
         img5 = img5.resize((68, 68))
         self.add_button = ImageTk.PhotoImage(img5)
         button = tk.Button(self.root, image=self.add_button, bg="#ffffff", relief="flat", bd=0, command=self.add_expense)
@@ -227,7 +239,7 @@ class ExpenseTracker:
             messagebox.showinfo("Success", "Expense added successfully!")
             self.dashboard()
 
-        entry_img = Image.open("Images/start2.png")
+        entry_img = Image.open(resource_path("Images/start2.png"))
         entry_img = entry_img.resize((105, 38))
         self.entry_img_button = ImageTk.PhotoImage(entry_img)
         button = tk.Button(self.root, image=self.entry_img_button, bg="#ffffff",
@@ -235,7 +247,7 @@ class ExpenseTracker:
                            activebackground="#ffffff", highlightthickness=0)
         button.place(x=111, y=585)
 
-        cancel_img = Image.open("Images/cancel2.png")
+        cancel_img = Image.open(resource_path("Images/cancel2.png"))
         cancel_img = cancel_img.resize((105, 38))
         self.cancel_img_button = ImageTk.PhotoImage(cancel_img)
         button = tk.Button(self.root, image=self.cancel_img_button, bg="#ffffff", relief="flat", bd=0,
@@ -282,7 +294,7 @@ class ExpenseTracker:
              tag = "even_row" if index % 2 == 0 else "odd_row"
              treeview.insert("", "end", values=values, tags=(tag,))
 
-         previous_img = Image.open("Images/close.png")
+         previous_img = Image.open(resource_path("Images/close.png"))
          previous_img = previous_img.resize((20, 20))
          self.previous_button = ImageTk.PhotoImage(previous_img)
          button = tk.Button(self.root, image=self.previous_button, bg="#0178D6", relief="flat", bd=0,
