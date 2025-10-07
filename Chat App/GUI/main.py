@@ -1,3 +1,5 @@
+import os
+import sys
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
@@ -5,6 +7,16 @@ import socket
 import threading
 from datetime import datetime
 
+def resource_path(relative_path):
+    """ Get absolute path to resource (works for both dev and PyInstaller) """
+    try:
+        # When running as a bundled app (PyInstaller), use the temporary folder
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # When running normally (not bundled), use the current directory
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 # ------------------ Chat App ------------------
 class ChatApp:
@@ -21,7 +33,7 @@ class ChatApp:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("Chat App Images/splash.png")
+        img_1 = Image.open(resource_path("Chat App Images/splash.png"))
         img_1 = img_1.resize((245, 204))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -39,7 +51,7 @@ class ChatApp:
         self.root.resizable(False, False)
 
         # ----- Top Bar -----
-        back_img = Image.open("Chat App Images/back.png")
+        back_img = Image.open(resource_path("Chat App Images/back.png"))
         back_img = back_img.resize((45, 45))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -47,7 +59,7 @@ class ChatApp:
                                 bg='#ffffff', relief='flat', bd=0, command="")
         button_back.place(x=15, y=15)
 
-        dots_img = Image.open("Chat App Images/3 dots.png")
+        dots_img = Image.open(resource_path("Chat App Images/3 dots.png"))
         dots_img = dots_img.resize((45, 45))
         self.dots_img_button = ImageTk.PhotoImage(dots_img)
 
@@ -55,7 +67,7 @@ class ChatApp:
                                   bg='#ffffff', relief='flat', bd=0, command="")
         button_3_dots.place(x=268, y=15)
 
-        user_img = Image.open("Chat App Images/user.png")
+        user_img = Image.open(resource_path("Chat App Images/user.png"))
         user_img = user_img.resize((50, 50))
         self.user_img_button = ImageTk.PhotoImage(user_img)
 
@@ -125,7 +137,7 @@ class ChatApp:
 
         add_placeholder()
 
-        send_img = Image.open("Chat App Images/send.png")
+        send_img = Image.open(resource_path("Chat App Images/send.png"))
         send_img = send_img.resize((30, 30))
         self.send_img_button = ImageTk.PhotoImage(send_img)
 
@@ -244,7 +256,7 @@ class ChatApp:
 
 
     def show_online_user(self, user_name):
-        online_img = Image.open("Chat App Images/online color.png")
+        online_img = Image.open(resource_path("Chat App Images/online color.png"))
         online_img = online_img.resize((12, 12))
         self.online_img_button = ImageTk.PhotoImage(online_img)
 

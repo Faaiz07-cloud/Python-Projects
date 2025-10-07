@@ -2,6 +2,20 @@ import csv
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import filedialog, messagebox
+import os
+import sys
+
+def resource_path(relative_path):
+    """ Get absolute path to resource (works for both dev and PyInstaller) """
+    try:
+        # When running as a bundled app (PyInstaller), use the temporary folder
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # When running normally (not bundled), use the current directory
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 class CsvAnalyzer:
      def __init__(self, root):
@@ -21,7 +35,7 @@ class CsvAnalyzer:
          self.root.configure(background="#ffffff")
          self.root.geometry('400x635')
 
-         home_img = Image.open("Images/starting_img.png")
+         home_img = Image.open(resource_path("Images/starting_img.png"))
          home_img = home_img.resize((255, 185))
          self.home_img = ImageTk.PhotoImage(home_img)
 
@@ -32,7 +46,7 @@ class CsvAnalyzer:
                            font=('Segoe UI', 22, 'bold'))
          label2.place(x=67, y=255)
 
-         start_img = Image.open("Images/start3.png")
+         start_img = Image.open(resource_path("Images/start3.png"))
          start_img = start_img.resize((124, 94))
          self.start_img_button = ImageTk.PhotoImage(start_img)
 
@@ -48,7 +62,7 @@ class CsvAnalyzer:
          self.root.configure(background="#ffffff")
          self.root.geometry('400x678')
 
-         back_img = Image.open("Images/back2.png")
+         back_img = Image.open(resource_path("Images/back2.png"))
          back_img = back_img.resize((24, 25))
          self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -70,7 +84,7 @@ class CsvAnalyzer:
              width=2,
              dash=(5, 3))
 
-         browse_img = Image.open("Images/browse2.png")
+         browse_img = Image.open(resource_path("Images/browse2.png"))
          browse_img = browse_img.resize((75, 73))
          self.broswe_img = ImageTk.PhotoImage(browse_img)
 
@@ -102,7 +116,7 @@ class CsvAnalyzer:
          self.column_name_entry = tk.Entry(self.root, **entry_style)
          self.column_name_entry.pack(fill="x", padx=(34,31), ipady=8)
 
-         analyze_img = Image.open("Images/start3.png")
+         analyze_img = Image.open(resource_path("Images/start3.png"))
          analyze_img = analyze_img.resize((124, 94))
          self.analyze_img = ImageTk.PhotoImage(analyze_img)
 

@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import tkinter as tk
 from tkinter import messagebox, simpledialog
@@ -48,6 +49,15 @@ def save_transactions(entry):
         json.dump(entry, f, indent=4)
 
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class BankingSystem:
     def __init__(self, root):
        self.root = root
@@ -73,7 +83,7 @@ class BankingSystem:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("BankingSystem Images/bank.png")
+        img_1 = Image.open(resource_path("BankingSystem Images/bank.png"))
         img_1 = img_1.resize((335, 225))
         self.bank_img = ImageTk.PhotoImage(img_1)
 
@@ -102,7 +112,7 @@ class BankingSystem:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-        login_img = Image.open("BankingSystem Images/login.png")
+        login_img = Image.open(resource_path("BankingSystem Images/login.png"))
         login_img = login_img.resize((95, 60))
         self.login_img_button = ImageTk.PhotoImage(login_img)
 
@@ -151,7 +161,7 @@ class BankingSystem:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("BankingSystem Images/bank.png")
+        img_1 = Image.open(resource_path("BankingSystem Images/bank.png"))
         img_1 = img_1.resize((230, 155))
         self.bank_img = ImageTk.PhotoImage(img_1)
 
@@ -200,7 +210,7 @@ class BankingSystem:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8, pady=(0, 19))
 
-        signup_img = Image.open("BankingSystem Images/signup.png")
+        signup_img = Image.open(resource_path("BankingSystem Images/signup.png"))
         signup_img = signup_img.resize((90, 55))
         self.signup_img_button = ImageTk.PhotoImage(signup_img)
 
@@ -266,7 +276,7 @@ class BankingSystem:
         label_name = tk.Label(self.root, text=self.current_user_name, font=("Segoe UI", 20, "bold"), bg="#ffffff", fg="#272815")
         label_name.place(x=25, y=40)
 
-        logout_img = Image.open("BankingSystem Images/logout.png")
+        logout_img = Image.open(resource_path("BankingSystem Images/logout.png"))
         logout_img = logout_img.resize((103, 80))
         self.logout_img_button = ImageTk.PhotoImage(logout_img)
 
@@ -274,7 +284,7 @@ class BankingSystem:
                                   bg='#ffffff', relief='flat', bd=0, command=self.logout, activebackground="#ffffff")
         logout_button.place(x=209, y=10)
 
-        balance = Image.open("BankingSystem Images/balance pic.png")
+        balance = Image.open(resource_path("BankingSystem Images/balance pic.png"))
         balance = balance.resize((307, 200))
         self.balance = ImageTk.PhotoImage(balance)
 
@@ -292,14 +302,14 @@ class BankingSystem:
         self.label_balance = tk.Label(self.root, text=balance, font=("Segoe UI", 29, "bold"), bg="#ffec73", fg="#3D240F")
         self.label_balance.place(x=30, y=236)
 
-        rectangle = Image.open("BankingSystem Images/Rectangle.jpg")
+        rectangle = Image.open(resource_path("BankingSystem Images/Rectangle.jpg"))
         rectangle = rectangle.resize((307, 85))
         self.rectangle = ImageTk.PhotoImage(rectangle)
 
         label_rectangle_pic = tk.Label(self.root, image=self.rectangle, bg="#ffffff")
         label_rectangle_pic.place(x=7, y=320)
 
-        deposit_img = Image.open("BankingSystem Images/deposit.png")
+        deposit_img = Image.open(resource_path("BankingSystem Images/deposit.png"))
         deposit_img = deposit_img.resize((84, 74))
         self.deposit_img_button = ImageTk.PhotoImage(deposit_img)
 
@@ -307,7 +317,7 @@ class BankingSystem:
                                   bg='#f4f2f0', relief='flat', bd=0, command=self.add, activebackground="#f4f2f0")
         deposit_button.place(x=24, y=326)
 
-        withdraw_img = Image.open("BankingSystem Images/withdraw.png")
+        withdraw_img = Image.open(resource_path("BankingSystem Images/withdraw.png"))
         withdraw_img = withdraw_img.resize((84, 74))
         self.withdraw_img_button = ImageTk.PhotoImage(withdraw_img)
 
@@ -315,7 +325,7 @@ class BankingSystem:
                                    bg='#f4f2f0', relief='flat', bd=0, command=self.withdraw, activebackground="#f4f2f0")
         withdraw_button.place(x=123, y=328)
 
-        user_img = Image.open("BankingSystem Images/user.png")
+        user_img = Image.open(resource_path("BankingSystem Images/user.png"))
         user_img = user_img.resize((84, 74))
         self.user_img_button = ImageTk.PhotoImage(user_img)
 
@@ -377,7 +387,7 @@ class BankingSystem:
         self.root.geometry("325x625")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("BankingSystem Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("BankingSystem Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -526,7 +536,7 @@ class BankingSystem:
                                   fg="#272815")
             label_name_1.place(x=25, y=40)
 
-            logout_img_1 = Image.open("BankingSystem Images/logout.png")
+            logout_img_1 = Image.open(resource_path("BankingSystem Images/logout.png"))
             logout_img_1 = logout_img_1.resize((103, 80))
             self.logout_img_button_1 = ImageTk.PhotoImage(logout_img_1)
 
@@ -535,7 +545,7 @@ class BankingSystem:
                                       activebackground="#ffffff")
             logout_button_1.place(x=209, y=10)
 
-            rectangle_1 = Image.open("BankingSystem Images/Rectangle details.jpg")
+            rectangle_1 = Image.open(resource_path("BankingSystem Images/Rectangle details.jpg"))
             rectangle_1 = rectangle_1.resize((307, 85))
             self.rectangle_1 = ImageTk.PhotoImage(rectangle_1)
 
@@ -546,7 +556,7 @@ class BankingSystem:
                                      bg="#ffffff", fg="#272815")
             label_details.place(x=27, y=130)
 
-            rectangle_2 = Image.open("BankingSystem Images/Rectangle Data.jpg")
+            rectangle_2 = Image.open(resource_path("BankingSystem Images/Rectangle Data.jpg"))
             rectangle_2 = rectangle_2.resize((307, 202))
             self.rectangle_2 = ImageTk.PhotoImage(rectangle_2)
 

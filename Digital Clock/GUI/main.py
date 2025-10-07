@@ -7,7 +7,15 @@ from zoneinfo import ZoneInfo
 import requests
 import threading
 from playsound import playsound
+import os
+import sys
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 # Class
 class DigitalClock:
@@ -31,7 +39,7 @@ class DigitalClock:
         self.root.config(bg="#ffc109")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("DigitalClock Images/splash.png")
+        img_1 = Image.open(resource_path("DigitalClock Images/splash.png"))
         img_1 = img_1.resize((280, 185))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -48,7 +56,7 @@ class DigitalClock:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_2 = Image.open("DigitalClock Images/splash2.png")
+        img_2 = Image.open(resource_path("DigitalClock Images/splash2.png"))
         img_2 = img_2.resize((180,180))
         self.splash_img_2 = ImageTk.PhotoImage(img_2)
 
@@ -98,7 +106,7 @@ class DigitalClock:
             for alarm, lbl in self.alarms.items():
                 lbl.pack(anchor="w", pady=(5, 0))
 
-        add_button_img = Image.open("DigitalClock Images/add-button.png")
+        add_button_img = Image.open(resource_path("DigitalClock Images/add-button.png"))
         add_button_img = add_button_img.resize((60, 60))
         self.add_button_img = ImageTk.PhotoImage(add_button_img)
 
@@ -143,7 +151,7 @@ class DigitalClock:
             data = response.json()
             temperature = data["main"]["temp"]
             temperature = int(temperature)
-        img_1 = Image.open("DigitalClock Images/sunny.png")
+        img_1 = Image.open(resource_path("DigitalClock Images/sunny.png"))
         img_1 = img_1.resize((28, 28))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -178,7 +186,7 @@ class DigitalClock:
             self.alarm_entry = tk.Entry(self.add_alarm_window, **entry_style)
             self.alarm_entry.place(x=90, y=8,)
 
-            add_button_img_2 = Image.open("DigitalClock Images/add-button.png")
+            add_button_img_2 = Image.open(resource_path("DigitalClock Images/add-button.png"))
             add_button_img_2 = add_button_img_2.resize((42, 42))
             self.add_button_img_2 = ImageTk.PhotoImage(add_button_img_2)
 

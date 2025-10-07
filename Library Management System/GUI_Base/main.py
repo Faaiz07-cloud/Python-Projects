@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -30,6 +31,12 @@ def find_book_by_id(books, book_id):
             return book
     return None
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class LibraryManagementSystem:
     def __init__(self, root):
@@ -58,7 +65,7 @@ class LibraryManagementSystem:
          self.root.geometry("377x627")
          self.root.configure(background="#ffffff")
 
-         img_1 = Image.open("Library Images/splash.png")
+         img_1 = Image.open(resource_path("Library Images/splash.png"))
          img_1 = img_1.resize((410,210))
          self.home_img = ImageTk.PhotoImage(img_1)
 
@@ -90,7 +97,7 @@ class LibraryManagementSystem:
          # self.username_entry.insert(0, "admin")
          # self.pass_entry.insert(0, "12345")
 
-         login_img = Image.open("Library Images/login.png")
+         login_img = Image.open(resource_path("Library Images/login.png"))
          login_img = login_img.resize((120, 110))
          self.login_img_button = ImageTk.PhotoImage(login_img)
 
@@ -135,7 +142,7 @@ class LibraryManagementSystem:
                                   bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
        label_dashboard.place(x=20, y=12)
 
-       logout_img = Image.open("Library Images/logout.png")
+       logout_img = Image.open(resource_path("Library Images/logout.png"))
        logout_img = logout_img.resize((112, 82))
        self.logout_img_button = ImageTk.PhotoImage(logout_img)
 
@@ -154,7 +161,7 @@ class LibraryManagementSystem:
        label_overview.place(x=20, y=153)
 
 
-       all_img = Image.open("Library Images/all.png")
+       all_img = Image.open(resource_path("Library Images/all.png"))
        all_img = all_img.resize((173, 173))
        self.all_img = ImageTk.PhotoImage(all_img)
 
@@ -165,7 +172,7 @@ class LibraryManagementSystem:
                                  font=('Segoe UI', 27, "bold"))
        label_all_count.place(x=87, y=313)
 
-       available_img = Image.open("Library Images/available.png")
+       available_img = Image.open(resource_path("Library Images/available.png"))
        available_img = available_img.resize((173, 173))
        self.available_img = ImageTk.PhotoImage(available_img)
 
@@ -176,7 +183,7 @@ class LibraryManagementSystem:
                                  font=('Segoe UI', 27, "bold"))
        label_available_count.place(x=269, y=313)
 
-       issued_img = Image.open("Library Images/issued.png")
+       issued_img = Image.open(resource_path("Library Images/issued.png"))
        issued_img = issued_img.resize((173, 173))
        self.issued_img = ImageTk.PhotoImage(issued_img)
 
@@ -187,7 +194,7 @@ class LibraryManagementSystem:
                                  font=('Segoe UI', 27, "bold"))
        label_issued_count.place(x=87, y=495)
 
-       authors_img = Image.open("Library Images/authors.png")
+       authors_img = Image.open(resource_path("Library Images/authors.png"))
        authors_img = authors_img.resize((173, 173))
        self.authors_img = ImageTk.PhotoImage(authors_img)
 
@@ -198,7 +205,7 @@ class LibraryManagementSystem:
                                  font=('Segoe UI', 27, "bold"))
        label_authors_count.place(x=269, y=495)
 
-       add_button_img = Image.open("Library Images/Add Book.jpg")
+       add_button_img = Image.open(resource_path("Library Images/Add Book.jpg"))
        add_button_img = add_button_img.resize((110, 100))
        self.add_button_img = ImageTk.PhotoImage(add_button_img)
 
@@ -206,7 +213,7 @@ class LibraryManagementSystem:
                                 bg='#ffffff', relief='flat', bd=0, command=self.add_book, activebackground='#ffffff')
        add_button.place(x=31, y=572)
 
-       issue_button_img = Image.open("Library Images/Issue Book.jpg")
+       issue_button_img = Image.open(resource_path("Library Images/Issue Book.jpg"))
        issue_button_img = issue_button_img.resize((110, 100))
        self.issue_button_img = ImageTk.PhotoImage(issue_button_img)
 
@@ -214,7 +221,7 @@ class LibraryManagementSystem:
                                 bg='#ffffff', relief='flat', bd=0, command=self.issue_book, activebackground='#ffffff')
        issue_button.place(x=148, y=572)
 
-       return_button_img = Image.open("Library Images/Return Book.jpg")
+       return_button_img = Image.open(resource_path("Library Images/Return Book.jpg"))
        return_button_img = return_button_img.resize((110, 100))
        self.return_button_img = ImageTk.PhotoImage(return_button_img)
 
@@ -231,7 +238,7 @@ class LibraryManagementSystem:
         self.root.configure(background="#ffffff")
 
 
-        back_img = Image.open("Library Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Library Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -301,7 +308,7 @@ class LibraryManagementSystem:
         self.root.geometry("405x677")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("Library Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Library Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -371,7 +378,7 @@ class LibraryManagementSystem:
         self.root.geometry("405x677")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("Library Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Library Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -441,7 +448,7 @@ class LibraryManagementSystem:
         self.root.geometry("405x677")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("Library Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Library Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -525,7 +532,7 @@ class LibraryManagementSystem:
         self.entry2 = tk.Entry(self.add_win, **entry_style)
         self.entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-        add_button_img_1 = Image.open("Library Images/Add Book.jpg")
+        add_button_img_1 = Image.open(resource_path("Library Images/Add Book.jpg"))
         add_button_img_1 = add_button_img_1.resize((111, 97))
         self.add_button_img_1 = ImageTk.PhotoImage(add_button_img_1)
 
@@ -585,7 +592,7 @@ class LibraryManagementSystem:
         self.entry_issue = tk.Entry(self.issue_win, **entry_style)
         self.entry_issue.pack(fill="x", padx=(30, 30), ipady=8)
 
-        issue_button_img_2 = Image.open("Library Images/Issue Book.jpg")
+        issue_button_img_2 = Image.open(resource_path("Library Images/Issue Book.jpg"))
         issue_button_img_2 = issue_button_img_2.resize((111, 97))
         self.issue_button_img_2 = ImageTk.PhotoImage(issue_button_img_2)
 
@@ -648,7 +655,7 @@ class LibraryManagementSystem:
         self.entry_return = tk.Entry(self.return_win, **entry_style)
         self.entry_return.pack(fill="x", padx=(30, 30), ipady=8)
 
-        return_button_img_1 = Image.open("Library Images/Return Book.jpg")
+        return_button_img_1 = Image.open(resource_path("Library Images/Return Book.jpg"))
         return_button_img_1 = return_button_img_1.resize((111, 97))
         self.return_button_img_1 = ImageTk.PhotoImage(return_button_img_1)
 

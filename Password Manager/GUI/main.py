@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import tkinter as tk
 from tkinter import messagebox, filedialog
@@ -7,7 +8,9 @@ from cryptography.fernet import Fernet
 
 # Encryption Setup
 KEY_FILE = "key.key"
-PASSWORD_FILE = "passwords.txt"
+
+def get_password_file(username):
+    return f"passwords_{username}.txt"
 
 # Function to generate encryption key (only once)
 def generate_key():
@@ -26,26 +29,38 @@ if not os.path.exists(KEY_FILE):
 load_key = load_key()
 fernet = Fernet(load_key)
 
-def add_password(username, email, password):
-    with open(PASSWORD_FILE, "a") as file:
+def add_password(username, email, password, current_user):
+    password_file = get_password_file(current_user)
+    if not os.path.exists(password_file):
+        with open(password_file, "w") as f:
+            pass
+
+    with open(password_file, "a") as file:
         encrypted_password = fernet.encrypt(password.encode()).decode()
         file.write(f"{username} | {email} | {encrypted_password}\n")
 
-
 # File Handling for Login & SignUp
-users_file = "password_manager_users.json"
+users_file = "USERS.json"
 
 def load_users():
     if os.path.exists(users_file):
-        with open(users_file, "r") as f:
-            return json.load(f)
+        with open(users_file, "r") as file:
+            return json.load(file)
     return []
 
 def save_users(users):
-    with open(users_file, "w") as f:
-        json.dump(users, f, indent=4)
+    with open(users_file, "w") as file:
+        json.dump(users, file, indent=4)
 
-# Class
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
 class PasswordManager:
     def __init__(self, root):
         self.root = root
@@ -53,16 +68,15 @@ class PasswordManager:
         self.users = load_users()
         self.add_pass_window = None
         self.login_page()
-        # self.dashboard()
 
     def login_page(self):
         self.clean_window()
-        self.root.geometry("325x625+530+50")
-        self.root.overrideredirect(True)
+        self.root.geometry("325x625")
         self.root.config(bg="#000000")
+        self.root.title("SecureX - Login")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("Password Manager Images/splash.png")
+        img_1 = Image.open(resource_path("Password Manager Images/splash.png"))
         img_1 = img_1.resize((335, 200))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -92,7 +106,7 @@ class PasswordManager:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-        login_img = Image.open("Password Manager Images/login&signup.png")
+        login_img = Image.open(resource_path("Password Manager Images/login&signup.png"))
         login_img = login_img.resize((95, 61))
         self.login_img_button = ImageTk.PhotoImage(login_img)
 
@@ -136,12 +150,12 @@ class PasswordManager:
 
     def signup_page(self):
         self.clean_window()
-        self.root.geometry("325x625+530+50")
-        self.root.overrideredirect(True)
+        self.root.geometry("325x625")
         self.root.config(bg="#000000")
+        self.root.title("SecureX - SignUp")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("Password Manager Images/splash.png")
+        img_1 = Image.open(resource_path("Password Manager Images/splash.png"))
         img_1 = img_1.resize((335, 200))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -171,7 +185,7 @@ class PasswordManager:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-        signup_img = Image.open("Password Manager Images/login&signup.png")
+        signup_img = Image.open(resource_path("Password Manager Images/login&signup.png"))
         signup_img = signup_img.resize((95, 61))
         self.signup_img_button = ImageTk.PhotoImage(signup_img)
 
@@ -214,8 +228,8 @@ class PasswordManager:
 
     def dashboard(self):
         self.clean_window()
-        self.root.geometry("330x690+530+20")
-        self.root.overrideredirect(True)
+        self.root.geometry("330x690")
+        self.root.title("Dashboard")
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
@@ -225,7 +239,7 @@ class PasswordManager:
                               bg="#ffffff", fg="#272815")
         label_name.place(x=25, y=40)
 
-        logout_img = Image.open("Password Manager Images/logout.png")
+        logout_img = Image.open(resource_path("Password Manager Images/logout.png"))
         logout_img = logout_img.resize((103, 80))
         self.logout_img_button = ImageTk.PhotoImage(logout_img)
 
@@ -233,14 +247,14 @@ class PasswordManager:
                                   bg='#ffffff', relief='flat', bd=0, command=self.logout, activebackground="#ffffff")
         logout_button.place(x=209, y=10)
 
-        frame = Image.open("Password Manager Images/rounded-rectangle.png")
+        frame = Image.open(resource_path("Password Manager Images/rounded-rectangle.png"))
         frame = frame.resize((320, 171))
         self.frame = ImageTk.PhotoImage(frame)
 
         label = tk.Label(self.root, image=self.frame, bg="#ffffff")
         label.place(x=3, y=100)
 
-        logo = Image.open("Password Manager Images/logo.png")
+        logo = Image.open(resource_path("Password Manager Images/logo.png"))
         logo = logo.resize((135, 93))
         self.logo = ImageTk.PhotoImage(logo)
 
@@ -254,22 +268,26 @@ class PasswordManager:
         label4.place(x=137, y=195)
 
         label_recent_pass = tk.Label(self.root, text="Recently Added", bg="#ffffff", fg="#323232",
-                                      font=("Calibri", 13, "bold"))
+                                     font=("Calibri", 13, "bold"))
         label_recent_pass.place(x=24, y=282)
 
         button = tk.Button(self.root, text="View All", bg="#ffffff", fg="#6f6f6f", font=("Calibri", 12, "bold"),
                            relief="flat", bd=0, command=self.all)
         button.place(x=238, y=280)
 
-        with open(PASSWORD_FILE, "r") as file:
+        password_file = get_password_file(self.current_username)
+        if not os.path.exists(password_file):
+            open(password_file, "w").close()  # create empty file
+
+        with open(password_file, "r") as file:
             lines = file.readlines()
 
         y_axis = 315
         spacing = 100  # frame height + some vertical gap
 
         if not lines:
-           tk.Label(self.root, text="No recent Passwords!",
-                bg='#ffffff', fg='#6f6f6f', font=('Calibri', 13, 'bold')).place(x=81, y=370)
+            tk.Label(self.root, text="No recent Passwords!",
+                     bg='#ffffff', fg='#6f6f6f', font=('Calibri', 13, 'bold')).place(x=81, y=370)
 
         for i, line in enumerate(reversed(lines[-3:])):
             username, email, encrypted_password = line.strip().split(" | ")
@@ -296,7 +314,6 @@ class PasswordManager:
             )
             label_email_get.place(x=15, y=45)
 
-
             label_pass_get = tk.Label(
                 frame2,
                 text=decrypted_password,
@@ -306,7 +323,7 @@ class PasswordManager:
             )
             label_pass_get.place(x=15, y=70)
 
-        add_img = Image.open("Password Manager Images/plus.png")
+        add_img = Image.open(resource_path("Password Manager Images/plus.png"))
         add_img = add_img.resize((60, 60))
         self.add_img_button = ImageTk.PhotoImage(add_img)
 
@@ -319,11 +336,10 @@ class PasswordManager:
         self.clean_window()
         self.root.title("All Passwords")
         self.root.resizable(False, False)
-        self.root.overrideredirect(False)
         self.root.geometry("340x680")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("Password Manager Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Password Manager Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -359,8 +375,11 @@ class PasswordManager:
 
         scroll_frame.bind("<Configure>", on_configure)
         # ======================================================
+        password_file = get_password_file(self.current_username)
+        if not os.path.exists(password_file):
+            open(password_file, "w").close()  # create empty file
 
-        with open(PASSWORD_FILE, "r") as file:
+        with open(password_file, "r") as file:
             lines = file.readlines()
 
         if not lines:
@@ -373,7 +392,7 @@ class PasswordManager:
 
             frame2 = tk.Frame(scroll_frame, bg="#ffffff", width=300, height=100, highlightbackground="#e0e0e0",
                               highlightthickness=0)
-            frame2.pack(pady=(10,0), padx=15, fill="x")  # 👈 pack instead of place
+            frame2.pack(pady=(10, 0), padx=15, fill="x")  # 👈 pack instead of place
 
             label_name_get = tk.Label(
                 frame2,
@@ -403,69 +422,69 @@ class PasswordManager:
             label_pass_get.pack(anchor="w", padx=10, pady=(0, 10))
 
     def add_product_page(self):
-       if self.add_pass_window is None or not tk.Toplevel.winfo_exists(self.add_pass_window):
-           self.add_pass_window = tk.Toplevel(self.root)
-           self.add_pass_window.overrideredirect(False)
-           self.add_pass_window.title("Add Password")
-           self.add_pass_window.geometry("325x360")
-           self.add_pass_window.resizable(False, False)
-           self.add_pass_window.config(bg="#ffffff")
+        if self.add_pass_window is None or not tk.Toplevel.winfo_exists(self.add_pass_window):
+            self.add_pass_window = tk.Toplevel(self.root)
+            self.add_pass_window.overrideredirect(False)
+            self.add_pass_window.title("Add Password")
+            self.add_pass_window.geometry("325x360")
+            self.add_pass_window.resizable(False, False)
+            self.add_pass_window.config(bg="#ffffff")
 
-           label_style = {"font": ("Calibri", 12, "bold"), "bg": "#ffffff", "anchor": "w", "fg": "#353b48"}
-           entry_style = {
-               "font": ("Calibri", 12),
-               "bg": "#f5f6fa",
-               "fg": "#2d3436",
-               "relief": "flat",
-               "bd": 0,
-               "highlightthickness": 1,
-               "highlightbackground": "#dcdde1",
-               "highlightcolor": "#00cec9"
-           }
+            label_style = {"font": ("Calibri", 12, "bold"), "bg": "#ffffff", "anchor": "w", "fg": "#353b48"}
+            entry_style = {
+                "font": ("Calibri", 12),
+                "bg": "#f5f6fa",
+                "fg": "#2d3436",
+                "relief": "flat",
+                "bd": 0,
+                "highlightthickness": 1,
+                "highlightbackground": "#dcdde1",
+                "highlightcolor": "#00cec9"
+            }
 
-           label_main = tk.Label(self.add_pass_window, text="Add a Password",
-                                 bg='#ffffff', fg='#323232', font=('Segoe UI', 16, 'bold'))
-           label_main.place(x=23, y=16)
+            label_main = tk.Label(self.add_pass_window, text="Add a Password",
+                                  bg='#ffffff', fg='#323232', font=('Segoe UI', 16, 'bold'))
+            label_main.place(x=23, y=16)
 
-           label_username = tk.Label(self.add_pass_window, text="Username", **label_style)
-           label_username.pack(fill="x", padx=(31, 0), pady=(90, 4))
-           self.username_entry = tk.Entry(self.add_pass_window, **entry_style)
-           self.username_entry.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
+            label_username = tk.Label(self.add_pass_window, text="Username", **label_style)
+            label_username.pack(fill="x", padx=(31, 0), pady=(90, 4))
+            self.username_entry = tk.Entry(self.add_pass_window, **entry_style)
+            self.username_entry.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
 
-           label_email = tk.Label(self.add_pass_window, text="Email", **label_style)
-           label_email.pack(fill="x", padx=(31, 0), pady=(0, 4))
-           self.entry_email = tk.Entry(self.add_pass_window, **entry_style)
-           self.entry_email.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
+            label_email = tk.Label(self.add_pass_window, text="Email", **label_style)
+            label_email.pack(fill="x", padx=(31, 0), pady=(0, 4))
+            self.entry_email = tk.Entry(self.add_pass_window, **entry_style)
+            self.entry_email.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
 
-           label_password = tk.Label(self.add_pass_window, text="Password", **label_style)
-           label_password.pack(fill="x", padx=(31, 0), pady=(0, 4))
-           self.entry_pass = tk.Entry(self.add_pass_window, **entry_style, show="*")
-           self.entry_pass.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
+            label_password = tk.Label(self.add_pass_window, text="Password", **label_style)
+            label_password.pack(fill="x", padx=(31, 0), pady=(0, 4))
+            self.entry_pass = tk.Entry(self.add_pass_window, **entry_style, show="*")
+            self.entry_pass.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
 
-           add_button_img = Image.open("Password Manager Images/plus.png")
-           add_button_img = add_button_img.resize((60,60))
-           self.add_button_img = ImageTk.PhotoImage(add_button_img)
+            add_button_img = Image.open(resource_path("Password Manager Images/plus.png"))
+            add_button_img = add_button_img.resize((60, 60))
+            self.add_button_img = ImageTk.PhotoImage(add_button_img)
 
-           add_button = tk.Button(self.add_pass_window, image=self.add_button_img,
-                                    bg='#ffffff', relief='flat', bd=0, command=self.add,
-                                    activebackground='#ffffff')
-           add_button.place(x=248, y=7)
+            add_button = tk.Button(self.add_pass_window, image=self.add_button_img,
+                                   bg='#ffffff', relief='flat', bd=0, command=self.add,
+                                   activebackground='#ffffff')
+            add_button.place(x=248, y=7)
 
-       else:
-           self.add_pass_window.lift()
-           self.add_pass_window.focus_force()
+        else:
+            self.add_pass_window.lift()
+            self.add_pass_window.focus_force()
 
     def add(self):
-            username = self.username_entry.get()
-            email = self.entry_email.get()
-            password = self.entry_pass.get()
+        username = self.username_entry.get()
+        email = self.entry_email.get()
+        password = self.entry_pass.get()
 
-            if not username or not email or not password:
-                messagebox.showwarning("Warning", "Please fill all fields!")
-                return
+        if not username or not email or not password:
+            messagebox.showwarning("Warning", "Please fill all fields!")
+            return
 
-            add_password(username, email, password)
-            self.dashboard()
+        add_password(username, email, password, self.current_username)
+        self.dashboard()
 
     def logout(self):
         if messagebox.askokcancel("Logout", "Do you want to logout?"):
@@ -478,3 +497,6 @@ class PasswordManager:
 root = tk.Tk()
 run = PasswordManager(root)
 root.mainloop()
+
+
+

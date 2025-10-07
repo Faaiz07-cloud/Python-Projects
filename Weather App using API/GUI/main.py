@@ -1,9 +1,17 @@
 import os
+import sys
 import json
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import requests
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 def get_weather(city_name):
     API_KEY = "9b79470a00144c322ffe1422b9e54079"
@@ -39,7 +47,7 @@ class Weather:
         self.root.config(bg=self.bg_color)
         self.root.resizable(False, False)
 
-        splash_img = Image.open("Weather App Images/splash.png")
+        splash_img = Image.open(resource_path("Weather App Images/splash.png"))
         splash_img = splash_img.resize((206, 170))
         self.splash_img = ImageTk.PhotoImage(splash_img)
 
@@ -62,7 +70,7 @@ class Weather:
                               font=("Segoe UI", 13,))
         label_info_3.place(x=130, y=446)
 
-        start_img = Image.open("Weather App Images/start.png")
+        start_img = Image.open(resource_path("Weather App Images/start.png"))
         start_img = start_img.resize((125, 93))
         self.start_img_button = ImageTk.PhotoImage(start_img)
 
@@ -95,7 +103,7 @@ class Weather:
             self.root.overrideredirect(False)
             self.detect_label.destroy()
 
-            back_img = Image.open("Weather App Images/menu_bar_img.png")
+            back_img = Image.open(resource_path("Weather App Images/menu_bar_img.png"))
             back_img = back_img.resize((32, 32))
             self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -107,7 +115,7 @@ class Weather:
                                        bg='#ffffff', fg='#222222', font=('Segoe UI', 19, 'bold'))
             label_dashboard.place(x=47, y=12)
 
-            search_img = Image.open("Weather App Images/search.png")
+            search_img = Image.open(resource_path("Weather App Images/search.png"))
             search_img =search_img.resize((110, 70))
             self.search_img_button = ImageTk.PhotoImage(search_img)
 
@@ -124,19 +132,19 @@ class Weather:
                                        bg='#ffffff', fg='#323232', font=('Segoe UI', 15, 'bold'))
             self.label_name.place(relx=0.5, y=140, anchor="center")
 
-            sunny_img = Image.open("Weather App Images/sunny.png")
+            sunny_img = Image.open(resource_path("Weather App Images/sunny.png"))
             sunny_img = sunny_img.resize((135, 125))
             self.sunny_img = ImageTk.PhotoImage(sunny_img)
 
-            raining_img = Image.open("Weather App Images/raining.png")
+            raining_img = Image.open(resource_path("Weather App Images/raining.png"))
             raining_img = raining_img.resize((135, 125))
             self.raining_img = ImageTk.PhotoImage(raining_img)
 
-            clouds_img = Image.open("Weather App Images/clouds.png")
+            clouds_img = Image.open(resource_path("Weather App Images/clouds.png"))
             clouds_img = clouds_img.resize((135, 125))
             self.clouds_img = ImageTk.PhotoImage(clouds_img)
 
-            other_img = Image.open("Weather App Images/other weather.png")
+            other_img = Image.open(resource_path("Weather App Images/other weather.png"))
             other_img = other_img.resize((135, 125))
             self.other_img = ImageTk.PhotoImage(other_img)
 
@@ -164,7 +172,7 @@ class Weather:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 22, 'bold'))
             self.label_temp.place(relx=0.5, y=370, anchor="center")
 
-            rain_img = Image.open("Weather App Images/rain.png")
+            rain_img = Image.open(resource_path("Weather App Images/rain.png"))
             rain_img = rain_img.resize((93, 140))
             self.rain_img = ImageTk.PhotoImage(rain_img)
 
@@ -178,7 +186,7 @@ class Weather:
             self.label_rain_count.place(x=46, y=508)
 
 
-            wind_img = Image.open("Weather App Images/wind.png")
+            wind_img = Image.open(resource_path("Weather App Images/wind.png"))
             wind_img = wind_img.resize((93, 140))
             self.wind_img = ImageTk.PhotoImage(wind_img)
 
@@ -193,7 +201,7 @@ class Weather:
 
 
 
-            humidity_img = Image.open("Weather App Images/humidity.png")
+            humidity_img = Image.open(resource_path("Weather App Images/humidity.png"))
             humidity_img = humidity_img.resize((93, 140))
             self.humidity_img = ImageTk.PhotoImage(humidity_img)
 
@@ -236,7 +244,7 @@ class Weather:
             self.entry = tk.Entry(self.search_window, **entry_style)
             self.entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-            change = Image.open("Weather App Images/change.png")
+            change = Image.open(resource_path("Weather App Images/change.png"))
             change = change.resize((111, 99))
             self.change = ImageTk.PhotoImage(change)
 

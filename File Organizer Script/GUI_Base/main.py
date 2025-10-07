@@ -2,11 +2,18 @@
 
 # Modules
 import os
+import sys
 import shutil
 import tkinter as tk
 from tkinter import messagebox, filedialog
 from PIL import Image, ImageTk
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 Categories = {
     "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"],
@@ -35,14 +42,14 @@ class FileOrganizer:
         self.root.configure(background='#ffffff')
         self.root.geometry('400x610')
 
-        home_img = Image.open("Images/starting img.png")
+        home_img = Image.open(resource_path("Images/starting img.png"))
         home_img = home_img.resize((315,210))
         self.home_img = ImageTk.PhotoImage(home_img)
 
         label_home_screen = tk.Label(self.root, image=self.home_img, bg='#ffffff')
         label_home_screen.place(x=44, y=50)
 
-        start_img = Image.open("Images/start.png")
+        start_img = Image.open(resource_path("Images/start.png"))
         start_img = start_img.resize((115, 50))
         self.start_img_button= ImageTk.PhotoImage(start_img)
 
@@ -50,7 +57,7 @@ class FileOrganizer:
                                  bg='#ffffff', relief='flat', bd=0, command=self.dashboard)
         button_start.place(x=142, y=345)
 
-        splash_img_1 = Image.open("Images/splash.png")
+        splash_img_1 = Image.open(resource_path("Images/splash.png"))
         splash_img_1 = splash_img_1.resize((400,225))
         self.splash_img_1 = ImageTk.PhotoImage(splash_img_1)
 
@@ -64,7 +71,7 @@ class FileOrganizer:
         self.root.configure(background='#ffffff')
         self.root.geometry('400x610')
 
-        back_img = Image.open("Images/back.png")
+        back_img = Image.open(resource_path("Images/back.png"))
         back_img = back_img.resize((24, 25))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -86,7 +93,7 @@ class FileOrganizer:
             width=2,
             dash=(5, 3))
 
-        browse_img = Image.open("Images/browse.png")
+        browse_img = Image.open(resource_path("Images/browse.png"))
         browse_img = browse_img.resize((75, 73))
         self.broswe_img = ImageTk.PhotoImage(browse_img)
 
@@ -100,7 +107,7 @@ class FileOrganizer:
         self.label_show_path = tk.Label(self.root, text="", bg='#ffffff',fg="#323232", font=('Segoe UI', 9, 'bold'))
         self.label_show_path.place(x=92, y=172)
 
-        organize_img = Image.open("Images/start.png")
+        organize_img = Image.open(resource_path("Images/start.png"))
         organize_img = organize_img.resize((115, 50))
         self.organize_img = ImageTk.PhotoImage(organize_img)
 
@@ -109,7 +116,7 @@ class FileOrganizer:
         button_organize.place(x=146, y=275)
 
 
-        splash_img = Image.open("Images/splash.png")
+        splash_img = Image.open(resource_path("Images/splash.png"))
         splash_img = splash_img.resize((400,225))
         self.splash_img = ImageTk.PhotoImage(splash_img)
 

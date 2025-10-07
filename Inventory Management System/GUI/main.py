@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import tkinter as tk
 from tkinter import messagebox, filedialog
@@ -36,6 +37,13 @@ def save_inventory(username, inventory):
     with open(user_inventory, "w") as f:
         json.dump(inventory, f, indent=4)
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 
 # Class
 class Inventory:
@@ -58,7 +66,7 @@ class Inventory:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("Inventory Images/splash.png")
+        img_1 = Image.open(resource_path("Inventory Images/splash.png"))
         img_1 = img_1.resize((335, 225))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -87,7 +95,7 @@ class Inventory:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-        login_img = Image.open("Inventory Images/login.png")
+        login_img = Image.open(resource_path("Inventory Images/login.png"))
         login_img = login_img.resize((95, 60))
         self.login_img_button = ImageTk.PhotoImage(login_img)
 
@@ -134,7 +142,7 @@ class Inventory:
         self.root.config(bg="#ffffff")
         self.root.resizable(False, False)
 
-        img_1 = Image.open("Inventory Images/splash.png")
+        img_1 = Image.open(resource_path("Inventory Images/splash.png"))
         img_1 = img_1.resize((335, 225))
         self.splash_img = ImageTk.PhotoImage(img_1)
 
@@ -163,7 +171,7 @@ class Inventory:
         self.pass_entry = tk.Entry(self.root, **entry_style, show="*")
         self.pass_entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-        signup_img = Image.open("Inventory Images/signup.png")
+        signup_img = Image.open(resource_path("Inventory Images/signup.png"))
         signup_img = signup_img.resize((95, 56))
         self.signup_img_button = ImageTk.PhotoImage(signup_img)
 
@@ -214,7 +222,7 @@ class Inventory:
                               bg="#ffffff", fg="#272815")
         label_name.place(x=25, y=40)
 
-        logout_img = Image.open("Inventory Images/logout.png")
+        logout_img = Image.open(resource_path("Inventory Images/logout.png"))
         logout_img = logout_img.resize((103, 80))
         self.logout_img_button = ImageTk.PhotoImage(logout_img)
 
@@ -222,7 +230,7 @@ class Inventory:
                                   bg='#ffffff', relief='flat', bd=0, command=self.logout, activebackground="#ffffff")
         logout_button.place(x=209, y=10)
 
-        frame = Image.open("Inventory Images/frame 1.png")
+        frame = Image.open(resource_path("Inventory Images/frame 1.png"))
         frame = frame.resize((305, 87))
         self.frame = ImageTk.PhotoImage(frame)
 
@@ -292,7 +300,7 @@ class Inventory:
             label_supplier_get = tk.Label(frame2, text=supplier, bg="#ffffff", fg="#222222", font=("Calibri", 13,))
             label_supplier_get.place(x=223, y=109)
 
-        add_img = Image.open("Inventory Images/add.png")
+        add_img = Image.open(resource_path("Inventory Images/add.png"))
         add_img = add_img.resize((60, 60))
         self.add_img_button = ImageTk.PhotoImage(add_img)
 
@@ -350,7 +358,7 @@ class Inventory:
            self.entry_product_supplier = tk.Entry(self.add_product_window, **entry_style)
            self.entry_product_supplier.pack(fill="x", padx=(30, 30), pady=(0, 18), ipady=6)
 
-           image_upload_img = Image.open("Inventory Images/image upload.png")
+           image_upload_img = Image.open(resource_path("Inventory Images/image upload.png"))
            image_upload_img = image_upload_img.resize((55, 56))
            self.image_upload_img_button = ImageTk.PhotoImage(image_upload_img)
 
@@ -364,7 +372,7 @@ class Inventory:
                                     highlightthickness=1, highlightbackground="#dcdde1")
            self.img_preview.place(x=30, y=529, width=265, height=120)
 
-           add_button_img = Image.open("Inventory Images/add.png")
+           add_button_img = Image.open(resource_path("Inventory Images/add.png"))
            add_button_img = add_button_img.resize((60,60))
            self.add_button_img = ImageTk.PhotoImage(add_button_img)
 
@@ -431,7 +439,7 @@ class Inventory:
         self.root.geometry("340x680")
         self.root.configure(background="#ffffff")
 
-        back_img = Image.open("Inventory Images/menu_bar_img.png")
+        back_img = Image.open(resource_path("Inventory Images/menu_bar_img.png"))
         back_img = back_img.resize((33, 33))
         self.back_img_button = ImageTk.PhotoImage(back_img)
 

@@ -2,8 +2,6 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import messagebox
 
-from virtualenv.config.convert import convert
-
 
 class UnitConverter:
       def __init__(self, root):

@@ -1,5 +1,14 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+import os
+import sys
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 quiz = [
     {"q": "Capital of France?", "options": ["Paris", "Rome", "Berlin", "Madrid"], "answer": "Paris"},
@@ -29,7 +38,7 @@ class QuizApp():
     def show_home_page(self):
         self.clear_screen()
 
-        bg = Image.open("bg_img.jpg")
+        bg = Image.open(resource_path("Quiz Img/bg_img.jpg"))
         bg = bg.resize((380, 225))
         self.bg_img = ImageTk.PhotoImage(bg)
 
@@ -53,7 +62,7 @@ class QuizApp():
             q_data = quiz[self.q_index]
             self.root.configure(background="#ffffff")
 
-            bg = Image.open("bg_img.jpg")
+            bg = Image.open(resource_path("Quiz Img/bg_img.jpg"))
             bg = bg.resize((375, 210))
             self.bg_img = ImageTk.PhotoImage(bg)
 
