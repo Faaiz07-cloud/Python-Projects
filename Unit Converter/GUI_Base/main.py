@@ -1,7 +1,15 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import messagebox
+import os
+import sys
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class UnitConverter:
       def __init__(self, root):
@@ -20,7 +28,7 @@ class UnitConverter:
           self.root.geometry("375x630")
           self.root.configure(background="#ffffff")
 
-          home_img = Image.open("Unit Converter Images/starting_img.png")
+          home_img = Image.open(resource_path("Unit Converter Images/starting_img.png"))
           home_img = home_img.resize((265, 190))
           self.home_img = ImageTk.PhotoImage(home_img)
 
@@ -35,7 +43,7 @@ class UnitConverter:
                             font=('Segoe UI', 31, 'bold'))
           label3.place(x=208, y=249)
 
-          start_img = Image.open("Unit Converter Images/start.png")
+          start_img = Image.open(resource_path("Unit Converter Images/start.png"))
           start_img = start_img.resize((124, 94))
           self.start_img_button = ImageTk.PhotoImage(start_img)
 
@@ -50,7 +58,7 @@ class UnitConverter:
           self.root.geometry("375x662")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -62,14 +70,14 @@ class UnitConverter:
                                        bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          frame = Image.open("Unit Converter Images/rounded-rectangle.png")
+          frame = Image.open(resource_path("Unit Converter Images/rounded-rectangle.png"))
           frame = frame.resize((335, 185))
           self.frame = ImageTk.PhotoImage(frame)
 
           label = tk.Label(self.root, image=self.frame, bg="#ffffff")
           label.place(x=14, y=50)
 
-          conversion_img = Image.open("Unit Converter Images/transfer.png")
+          conversion_img = Image.open(resource_path("Unit Converter Images/transfer.png"))
           conversion_img = conversion_img.resize((90, 90))
           self.conversion_img = ImageTk.PhotoImage(conversion_img)
 
@@ -88,7 +96,7 @@ class UnitConverter:
                              relief="flat", bd=0, command=self.more)
           button.place(x=293, y=243)
 
-          length_img = Image.open("Unit Converter Images/length.png")
+          length_img = Image.open(resource_path("Unit Converter Images/length.png"))
           length_img = length_img.resize((355, 130))
           self.length_img = ImageTk.PhotoImage(length_img)
 
@@ -96,7 +104,7 @@ class UnitConverter:
                                     relief='flat', bd=0, highlightcolor="#ffffff", highlightthickness=0, activebackground="#ffffff", activeforeground="#ffffff", command=self.length_menu)
           length_button.place(x=10, y=280)
 
-          weight_img = Image.open("Unit Converter Images/Weight.png")
+          weight_img = Image.open(resource_path("Unit Converter Images/Weight.png"))
           weight_img = weight_img.resize((355, 130))
           self.weight_img = ImageTk.PhotoImage(weight_img)
 
@@ -104,7 +112,7 @@ class UnitConverter:
                                     relief='flat', bd=0, highlightcolor="#ffffff", highlightthickness=0, activebackground="#ffffff", activeforeground="#ffffff", command=self.weight_menu)
           weight_button.place(x=10, y=399)
 
-          temp_img = Image.open("Unit Converter Images/Temperature.png")
+          temp_img = Image.open(resource_path("Unit Converter Images/Temperature.png"))
           temp_img = temp_img.resize((355, 130))
           self.temp_img = ImageTk.PhotoImage(temp_img)
 
@@ -119,7 +127,7 @@ class UnitConverter:
           self.root.geometry("375x662")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -131,7 +139,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          time_img = Image.open("Unit Converter Images/Time.png")
+          time_img = Image.open(resource_path("Unit Converter Images/Time.png"))
           time_img = time_img.resize((355, 130))
           self.time_img = ImageTk.PhotoImage(time_img)
 
@@ -140,7 +148,7 @@ class UnitConverter:
                                     activebackground="#ffffff", activeforeground="#ffffff", command=self.time_menu)
           time_button.place(x=10, y=47)
 
-          area_img = Image.open("Unit Converter Images/Area.png")
+          area_img = Image.open(resource_path("Unit Converter Images/Area.png"))
           area_img = area_img.resize((355, 130))
           self.area_img = ImageTk.PhotoImage(area_img)
 
@@ -149,7 +157,7 @@ class UnitConverter:
                                   activebackground="#ffffff", activeforeground="#ffffff", command=self.area_menu)
           area_button.place(x=10, y=166)
 
-          volume_img = Image.open("Unit Converter Images/Volume.png")
+          volume_img = Image.open(resource_path("Unit Converter Images/Volume.png"))
           volume_img = volume_img.resize((355, 130))
           self.volume_img = ImageTk.PhotoImage(volume_img)
 
@@ -158,7 +166,7 @@ class UnitConverter:
                                   activebackground="#ffffff", activeforeground="#ffffff", command=self.volume_menu)
           volume_button.place(x=10, y=285)
 
-          speed_img = Image.open("Unit Converter Images/Speed.png")
+          speed_img = Image.open(resource_path("Unit Converter Images/Speed.png"))
           speed_img = speed_img.resize((355, 130))
           self.speed_img = ImageTk.PhotoImage(speed_img)
 
@@ -167,7 +175,7 @@ class UnitConverter:
                                     activebackground="#ffffff", activeforeground="#ffffff", command=self.speed_menu)
           speed_button.place(x=10, y=404)
 
-          energy_img = Image.open("Unit Converter Images/Energy.png")
+          energy_img = Image.open(resource_path("Unit Converter Images/Energy.png"))
           energy_img = energy_img.resize((355, 130))
           self.energy_img = ImageTk.PhotoImage(energy_img)
 
@@ -183,7 +191,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -195,42 +203,42 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Length Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Length Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
           button1 = tk.Button(self.root, image=self.img1, bg="#ffffff", relief='flat', bd=0, activebackground="#ffffff", command=self.ft__m)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Length Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Length Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
           button2 = tk.Button(self.root, image=self.img2, bg="#ffffff", relief='flat', bd=0, activebackground="#ffffff", command=self.in__m)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Length Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Length Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
           button3 = tk.Button(self.root, image=self.img3, bg="#ffffff", relief='flat', bd=0, activebackground="#ffffff", command=self.km__m)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Length Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Length Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
           button4 = tk.Button(self.root, image=self.img4, bg="#ffffff", relief='flat', bd=0, activebackground="#ffffff", command=self.cm__in)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Length Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Length Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
           button5 = tk.Button(self.root, image=self.img5, bg="#ffffff", relief='flat', bd=0, activebackground="#ffffff", command=self.mi__km)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Length Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Length Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -244,7 +252,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -256,7 +264,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Weight Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Weight Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -264,7 +272,7 @@ class UnitConverter:
                               activebackground="#ffffff", command= self.kg__lb)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Weight Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Weight Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -272,7 +280,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.g__kg)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Weight Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Weight Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -280,7 +288,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.kg__mg)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Weight Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Weight Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -288,7 +296,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.oz__g)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Weight Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Weight Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -296,7 +304,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.ton__kg)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Weight Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Weight Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -311,7 +319,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -323,7 +331,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Temp Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Temp Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -331,7 +339,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.c__f)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Temp Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Temp Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -339,7 +347,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.c__k)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Temp Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Temp Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -347,7 +355,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.f__k)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Temp Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Temp Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -355,7 +363,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.c__r)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Temp Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Temp Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -363,7 +371,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.f__r)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Temp Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Temp Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -378,7 +386,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -391,7 +399,7 @@ class UnitConverter:
           label_dashboard.place(x=50, y=2)
 
 
-          img1 = Image.open("Unit Converter Images/Time Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Time Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -399,7 +407,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.hr__min)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Time Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Time Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -407,7 +415,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.hr__sec)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Time Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Time Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -415,7 +423,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.sec__min)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Time Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Time Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -423,7 +431,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.day__hr)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Time Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Time Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -431,7 +439,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.wk__day)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Time Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Time Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -446,7 +454,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -458,7 +466,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Area Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Area Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -466,7 +474,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.m2__ft2)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Area Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Area Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -474,7 +482,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.km2__ha)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Area Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Area Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -482,7 +490,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.ac__m2)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Area Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Area Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -490,7 +498,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.yd2__ft2)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Area Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Area Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -498,7 +506,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.in2__cm2)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Area Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Area Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -513,7 +521,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -525,7 +533,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Volume Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Volume Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -533,7 +541,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.l__ml)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Volume Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Volume Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -541,7 +549,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.l__gal)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Volume Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Volume Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -549,7 +557,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.m3__l)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Volume Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Volume Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -557,7 +565,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.cm3__ml)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Volume Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Volume Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -565,7 +573,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.in3__cm3)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Volume Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Volume Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -581,7 +589,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -593,7 +601,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Speed Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Speed Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -601,7 +609,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.kmh__mph)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Speed Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Speed Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -609,7 +617,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.ms__kmh)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Speed Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Speed Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -617,7 +625,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.ms__mph)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Speed Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Speed Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -625,7 +633,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.kn__kmh)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Speed Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Speed Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -633,7 +641,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.fts__ms)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Speed Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Speed Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -648,7 +656,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -660,7 +668,7 @@ class UnitConverter:
                                      bg='#ffffff', fg='#323232', font=('Segoe UI', 20, 'bold'))
           label_dashboard.place(x=50, y=2)
 
-          img1 = Image.open("Unit Converter Images/Energy Menu/1.png")
+          img1 = Image.open(resource_path("Unit Converter Images/Energy Menu/1.png"))
           img1 = img1.resize((320, 85))
           self.img1 = ImageTk.PhotoImage(img1)
 
@@ -668,7 +676,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.j__ev)
           button1.place(x=26, y=58)
 
-          img2 = Image.open("Unit Converter Images/Energy Menu/2.png")
+          img2 = Image.open(resource_path("Unit Converter Images/Energy Menu/2.png"))
           img2 = img2.resize((320, 85))
           self.img2 = ImageTk.PhotoImage(img2)
 
@@ -676,7 +684,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.j__cal)
           button2.place(x=26, y=150)
 
-          img3 = Image.open("Unit Converter Images/Energy Menu/3.png")
+          img3 = Image.open(resource_path("Unit Converter Images/Energy Menu/3.png"))
           img3 = img3.resize((320, 85))
           self.img3 = ImageTk.PhotoImage(img3)
 
@@ -684,7 +692,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.j__kwh)
           button3.place(x=26, y=242)
 
-          img4 = Image.open("Unit Converter Images/Energy Menu/4.png")
+          img4 = Image.open(resource_path("Unit Converter Images/Energy Menu/4.png"))
           img4 = img4.resize((320, 85))
           self.img4 = ImageTk.PhotoImage(img4)
 
@@ -692,7 +700,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.kwh__cal)
           button4.place(x=26, y=334)
 
-          img5 = Image.open("Unit Converter Images/Energy Menu/5.png")
+          img5 = Image.open(resource_path("Unit Converter Images/Energy Menu/5.png"))
           img5 = img5.resize((320, 85))
           self.img5 = ImageTk.PhotoImage(img5)
 
@@ -700,7 +708,7 @@ class UnitConverter:
                               activebackground="#ffffff", command=self.j__wh)
           button5.place(x=26, y=426)
 
-          img6 = Image.open("Unit Converter Images/Energy Menu/6.png")
+          img6 = Image.open(resource_path("Unit Converter Images/Energy Menu/6.png"))
           img6 = img6.resize((320, 85))
           self.img6 = ImageTk.PhotoImage(img6)
 
@@ -716,7 +724,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -782,7 +790,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -796,7 +804,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -814,7 +822,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -882,7 +890,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -895,7 +903,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -913,7 +921,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -977,7 +985,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -990,7 +998,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1009,7 +1017,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -1073,7 +1081,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -1086,7 +1094,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1105,7 +1113,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -1169,7 +1177,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -1182,7 +1190,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1201,7 +1209,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -1265,7 +1273,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -1278,7 +1286,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1298,7 +1306,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -1365,7 +1373,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -1379,7 +1387,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1400,7 +1408,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png")
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png"))
           back_img = back_img.resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
 
@@ -1467,7 +1475,7 @@ class UnitConverter:
           entry = tk.Entry(self.root, **entry_style)
           entry.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img = Image.open("Unit Converter Images/convert.png")
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img = convert_img.resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
 
@@ -1481,7 +1489,7 @@ class UnitConverter:
           entry2 = tk.Entry(self.root, **entry_style)
           entry2.pack(fill="x", padx=(30, 30), ipady=8)
 
-          convert_img2 = Image.open("Unit Converter Images/convert.png")
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png"))
           convert_img2 = convert_img2.resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
 
@@ -1502,7 +1510,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.weight_menu)
@@ -1547,7 +1555,7 @@ class UnitConverter:
           label_kg.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_kg = tk.Entry(self.root, **entry_style)
           entry_kg.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=kg_to_mg)
@@ -1558,7 +1566,7 @@ class UnitConverter:
           label_mg.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_mg = tk.Entry(self.root, **entry_style)
           entry_mg.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=mg_to_kg)
@@ -1575,7 +1583,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.weight_menu)
@@ -1617,7 +1625,7 @@ class UnitConverter:
           label_oz.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_oz = tk.Entry(self.root, **entry_style)
           entry_oz.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=oz_to_g)
@@ -1628,7 +1636,7 @@ class UnitConverter:
           label_g.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_g = tk.Entry(self.root, **entry_style)
           entry_g.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=g_to_oz)
@@ -1644,7 +1652,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.weight_menu)
@@ -1686,7 +1694,7 @@ class UnitConverter:
           label_ton.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_ton = tk.Entry(self.root, **entry_style)
           entry_ton.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=ton_to_kg)
@@ -1697,7 +1705,7 @@ class UnitConverter:
           label_kg.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_kg = tk.Entry(self.root, **entry_style)
           entry_kg.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=kg_to_ton)
@@ -1714,7 +1722,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.weight_menu)
@@ -1756,7 +1764,7 @@ class UnitConverter:
           label_lb.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_lb = tk.Entry(self.root, **entry_style)
           entry_lb.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=lb_to_oz)
@@ -1767,7 +1775,7 @@ class UnitConverter:
           label_oz.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_oz = tk.Entry(self.root, **entry_style)
           entry_oz.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=oz_to_lb)
@@ -1785,7 +1793,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -1830,7 +1838,7 @@ class UnitConverter:
           label_c.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_c = tk.Entry(self.root, **entry_style)
           entry_c.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=c_to_f)
@@ -1841,7 +1849,7 @@ class UnitConverter:
           label_f.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_f = tk.Entry(self.root, **entry_style)
           entry_f.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=f_to_c)
@@ -1858,7 +1866,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -1903,7 +1911,7 @@ class UnitConverter:
           label_c.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_c = tk.Entry(self.root, **entry_style)
           entry_c.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=c_to_k)
@@ -1914,7 +1922,7 @@ class UnitConverter:
           label_k.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_k = tk.Entry(self.root, **entry_style)
           entry_k.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=k_to_c)
@@ -1932,7 +1940,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -1977,7 +1985,7 @@ class UnitConverter:
           label_f.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_f = tk.Entry(self.root, **entry_style)
           entry_f.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=f_to_k)
@@ -1988,7 +1996,7 @@ class UnitConverter:
           label_k.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_k = tk.Entry(self.root, **entry_style)
           entry_k.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=k_to_f)
@@ -2006,7 +2014,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -2051,7 +2059,7 @@ class UnitConverter:
           label_c.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_c = tk.Entry(self.root, **entry_style)
           entry_c.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=c_to_r)
@@ -2062,7 +2070,7 @@ class UnitConverter:
           label_r.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_r = tk.Entry(self.root, **entry_style)
           entry_r.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=r_to_c)
@@ -2080,7 +2088,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -2125,7 +2133,7 @@ class UnitConverter:
           label_f.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_f = tk.Entry(self.root, **entry_style)
           entry_f.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=f_to_r)
@@ -2136,7 +2144,7 @@ class UnitConverter:
           label_r.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_r = tk.Entry(self.root, **entry_style)
           entry_r.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=r_to_f)
@@ -2154,7 +2162,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.temp_menu)
@@ -2199,7 +2207,7 @@ class UnitConverter:
           label_k.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_k = tk.Entry(self.root, **entry_style)
           entry_k.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=k_to_r)
@@ -2210,7 +2218,7 @@ class UnitConverter:
           label_r.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_r = tk.Entry(self.root, **entry_style)
           entry_r.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=r_to_k)
@@ -2229,7 +2237,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.time_menu)
@@ -2274,7 +2282,7 @@ class UnitConverter:
           label_hr.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_hr = tk.Entry(self.root, **entry_style)
           entry_hr.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=hr_to_min)
@@ -2285,7 +2293,7 @@ class UnitConverter:
           label_min.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_min = tk.Entry(self.root, **entry_style)
           entry_min.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=min_to_hr)
@@ -2303,7 +2311,7 @@ class UnitConverter:
           self.root.configure(background="#ffffff")
 
           # Back Button
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           button_back = tk.Button(self.root, image=self.back_img_button,
                                   bg='#ffffff', relief='flat', bd=0, command=self.time_menu)
@@ -2348,7 +2356,7 @@ class UnitConverter:
           label_hr.pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_hr = tk.Entry(self.root, **entry_style)
           entry_hr.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button = ImageTk.PhotoImage(convert_img)
           convert_button = tk.Button(self.root, image=self.convert_img_button,
                                      bg='#ffffff', relief='flat', bd=0, command=hr_to_sec)
@@ -2359,7 +2367,7 @@ class UnitConverter:
           label_sec.pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_sec = tk.Entry(self.root, **entry_style)
           entry_sec.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           convert_button2 = tk.Button(self.root, image=self.convert_img_button2,
                                       bg='#ffffff', relief='flat', bd=0, command=sec_to_hr)
@@ -2377,7 +2385,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.time_menu).place(x=15, y=8)
@@ -2413,7 +2421,7 @@ class UnitConverter:
           tk.Label(self.root, text="Seconds to Minutes", **label_style).pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_sec = tk.Entry(self.root, **entry_style)
           entry_sec.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button3 = ImageTk.PhotoImage(convert_img)
           tk.Button(self.root, image=self.convert_img_button3,
                     bg='#ffffff', relief='flat', bd=0, command=sec_to_min).place(x=245, y=158)
@@ -2421,7 +2429,7 @@ class UnitConverter:
           tk.Label(self.root, text="Minutes to Seconds", **label_style).pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_min = tk.Entry(self.root, **entry_style)
           entry_min.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button4 = ImageTk.PhotoImage(convert_img2)
           tk.Button(self.root, image=self.convert_img_button4,
                     bg='#ffffff', relief='flat', bd=0, command=min_to_sec).place(x=245, y=323)
@@ -2437,7 +2445,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.time_menu).place(x=15, y=8)
@@ -2473,7 +2481,7 @@ class UnitConverter:
           tk.Label(self.root, text="Days to Hours", **label_style).pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_day = tk.Entry(self.root, **entry_style)
           entry_day.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button5 = ImageTk.PhotoImage(convert_img)
           tk.Button(self.root, image=self.convert_img_button5,
                     bg='#ffffff', relief='flat', bd=0, command=day_to_hr).place(x=245, y=158)
@@ -2481,7 +2489,7 @@ class UnitConverter:
           tk.Label(self.root, text="Hours to Days", **label_style).pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_hr = tk.Entry(self.root, **entry_style)
           entry_hr.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button6 = ImageTk.PhotoImage(convert_img2)
           tk.Button(self.root, image=self.convert_img_button6,
                     bg='#ffffff', relief='flat', bd=0, command=hr_to_day).place(x=245, y=323)
@@ -2497,7 +2505,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.time_menu).place(x=15, y=8)
@@ -2533,7 +2541,7 @@ class UnitConverter:
           tk.Label(self.root, text="Weeks to Days", **label_style).pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_wk = tk.Entry(self.root, **entry_style)
           entry_wk.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button7 = ImageTk.PhotoImage(convert_img)
           tk.Button(self.root, image=self.convert_img_button7,
                     bg='#ffffff', relief='flat', bd=0, command=wk_to_day).place(x=245, y=158)
@@ -2541,7 +2549,7 @@ class UnitConverter:
           tk.Label(self.root, text="Days to Weeks", **label_style).pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_day = tk.Entry(self.root, **entry_style)
           entry_day.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button8 = ImageTk.PhotoImage(convert_img2)
           tk.Button(self.root, image=self.convert_img_button8,
                     bg='#ffffff', relief='flat', bd=0, command=day_to_wk).place(x=245, y=323)
@@ -2557,7 +2565,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.time_menu).place(x=15, y=8)
@@ -2593,7 +2601,7 @@ class UnitConverter:
           tk.Label(self.root, text="Months to Days", **label_style).pack(fill="x", padx=(29, 0), pady=(80, 7))
           entry_mon = tk.Entry(self.root, **entry_style)
           entry_mon.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button9 = ImageTk.PhotoImage(convert_img)
           tk.Button(self.root, image=self.convert_img_button9,
                     bg='#ffffff', relief='flat', bd=0, command=mon_to_day).place(x=245, y=158)
@@ -2601,7 +2609,7 @@ class UnitConverter:
           tk.Label(self.root, text="Days to Months", **label_style).pack(fill="x", padx=(29, 0), pady=(90, 7))
           entry_day = tk.Entry(self.root, **entry_style)
           entry_day.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button10 = ImageTk.PhotoImage(convert_img2)
           tk.Button(self.root, image=self.convert_img_button10,
                     bg='#ffffff', relief='flat', bd=0, command=day_to_mon).place(x=245, y=323)
@@ -2617,7 +2625,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2657,7 +2665,7 @@ class UnitConverter:
                                                                                       pady=(80, 7))
           entry_m2 = tk.Entry(self.root, **entry_style)
           entry_m2.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button1 = ImageTk.PhotoImage(convert_img)
           tk.Button(self.root, image=self.convert_img_button1,
                     bg='#ffffff', relief='flat', bd=0, command=m2_to_ft2).place(x=245, y=158)
@@ -2667,7 +2675,7 @@ class UnitConverter:
                                                                                       pady=(90, 7))
           entry_ft2 = tk.Entry(self.root, **entry_style)
           entry_ft2.pack(fill="x", padx=(30, 30), ipady=8)
-          convert_img2 = Image.open("Unit Converter Images/convert.png").resize((105, 55))
+          convert_img2 = Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55))
           self.convert_img_button2 = ImageTk.PhotoImage(convert_img2)
           tk.Button(self.root, image=self.convert_img_button2,
                     bg='#ffffff', relief='flat', bd=0, command=ft2_to_m2).place(x=245, y=323)
@@ -2684,7 +2692,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2722,7 +2730,7 @@ class UnitConverter:
           entry_km2 = tk.Entry(self.root, **entry_style);
           entry_km2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=km2_to_ha).place(x=245, y=158)
 
@@ -2731,7 +2739,7 @@ class UnitConverter:
           entry_ha = tk.Entry(self.root, **entry_style);
           entry_ha.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ha_to_km2).place(x=245, y=323)
 
@@ -2746,7 +2754,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2783,7 +2791,7 @@ class UnitConverter:
           entry_ac = tk.Entry(self.root, **entry_style);
           entry_ac.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=ac_to_m2).place(x=245, y=158)
 
@@ -2791,7 +2799,7 @@ class UnitConverter:
           entry_m2 = tk.Entry(self.root, **entry_style);
           entry_m2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=m2_to_ac).place(x=245, y=323)
 
@@ -2806,7 +2814,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2844,7 +2852,7 @@ class UnitConverter:
           entry_yd2 = tk.Entry(self.root, **entry_style);
           entry_yd2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=yd2_to_ft2).place(x=245, y=158)
 
@@ -2853,7 +2861,7 @@ class UnitConverter:
           entry_ft2 = tk.Entry(self.root, **entry_style);
           entry_ft2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ft2_to_yd2).place(x=245, y=323)
 
@@ -2868,7 +2876,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2906,7 +2914,7 @@ class UnitConverter:
           entry_in2 = tk.Entry(self.root, **entry_style);
           entry_in2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=in2_to_cm2).place(x=245, y=158)
 
@@ -2915,7 +2923,7 @@ class UnitConverter:
           entry_cm2 = tk.Entry(self.root, **entry_style);
           entry_cm2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=cm2_to_in2).place(x=245, y=323)
 
@@ -2930,7 +2938,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.area_menu).place(x=15, y=8)
@@ -2967,7 +2975,7 @@ class UnitConverter:
           entry_mi2 = tk.Entry(self.root, **entry_style);
           entry_mi2.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=mi2_to_ac).place(x=245, y=158)
 
@@ -2975,7 +2983,7 @@ class UnitConverter:
           entry_ac = tk.Entry(self.root, **entry_style);
           entry_ac.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ac_to_mi2).place(x=245, y=323)
 
@@ -2990,7 +2998,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3029,7 +3037,7 @@ class UnitConverter:
           entry_l = tk.Entry(self.root, **entry_style);
           entry_l.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=l_to_ml).place(x=245, y=158)
 
@@ -3038,7 +3046,7 @@ class UnitConverter:
           entry_ml = tk.Entry(self.root, **entry_style);
           entry_ml.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ml_to_l).place(x=245, y=323)
 
@@ -3054,7 +3062,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3093,7 +3101,7 @@ class UnitConverter:
           entry_l = tk.Entry(self.root, **entry_style);
           entry_l.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=l_to_gal).place(x=245, y=158)
 
@@ -3102,7 +3110,7 @@ class UnitConverter:
           entry_gal = tk.Entry(self.root, **entry_style);
           entry_gal.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=gal_to_l).place(x=245, y=323)
 
@@ -3118,7 +3126,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3156,7 +3164,7 @@ class UnitConverter:
           entry_m3 = tk.Entry(self.root, **entry_style);
           entry_m3.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=m3_to_l).place(x=245, y=158)
 
@@ -3164,7 +3172,7 @@ class UnitConverter:
           entry_l = tk.Entry(self.root, **entry_style);
           entry_l.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=l_to_m3).place(x=245, y=323)
 
@@ -3179,7 +3187,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3218,7 +3226,7 @@ class UnitConverter:
           entry_cm3 = tk.Entry(self.root, **entry_style);
           entry_cm3.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=cm3_to_ml).place(x=245, y=158)
 
@@ -3227,7 +3235,7 @@ class UnitConverter:
           entry_ml = tk.Entry(self.root, **entry_style);
           entry_ml.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ml_to_cm3).place(x=245, y=323)
 
@@ -3242,7 +3250,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3281,7 +3289,7 @@ class UnitConverter:
           entry_in3 = tk.Entry(self.root, **entry_style);
           entry_in3.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=in3_to_cm3).place(x=245, y=158)
 
@@ -3290,7 +3298,7 @@ class UnitConverter:
           entry_cm3 = tk.Entry(self.root, **entry_style);
           entry_cm3.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=cm3_to_in3).place(x=245, y=323)
 
@@ -3305,7 +3313,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.volume_menu).place(x=15, y=8)
@@ -3343,7 +3351,7 @@ class UnitConverter:
           entry_ft3 = tk.Entry(self.root, **entry_style);
           entry_ft3.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=ft3_to_gal).place(x=245, y=158)
 
@@ -3351,7 +3359,7 @@ class UnitConverter:
           entry_gal = tk.Entry(self.root, **entry_style);
           entry_gal.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=gal_to_ft3).place(x=245, y=323)
 
@@ -3366,7 +3374,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3404,7 +3412,7 @@ class UnitConverter:
           entry_kmh = tk.Entry(self.root, **entry_style);
           entry_kmh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=kmh_to_mph).place(x=245, y=158)
 
@@ -3413,7 +3421,7 @@ class UnitConverter:
           entry_mph = tk.Entry(self.root, **entry_style);
           entry_mph.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=mph_to_kmh).place(x=245, y=323)
 
@@ -3428,7 +3436,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3466,7 +3474,7 @@ class UnitConverter:
           entry_ms = tk.Entry(self.root, **entry_style);
           entry_ms.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=ms_to_kmh).place(x=245, y=158)
 
@@ -3475,7 +3483,7 @@ class UnitConverter:
           entry_kmh = tk.Entry(self.root, **entry_style);
           entry_kmh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=kmh_to_ms).place(x=245, y=323)
 
@@ -3490,7 +3498,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3528,7 +3536,7 @@ class UnitConverter:
           entry_ms = tk.Entry(self.root, **entry_style);
           entry_ms.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=ms_to_mph).place(x=245, y=158)
 
@@ -3537,7 +3545,7 @@ class UnitConverter:
           entry_mph = tk.Entry(self.root, **entry_style);
           entry_mph.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=mph_to_ms).place(x=245, y=323)
 
@@ -3552,7 +3560,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3589,7 +3597,7 @@ class UnitConverter:
           entry_kn = tk.Entry(self.root, **entry_style);
           entry_kn.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=kn_to_kmh).place(x=245, y=158)
 
@@ -3597,7 +3605,7 @@ class UnitConverter:
           entry_kmh = tk.Entry(self.root, **entry_style);
           entry_kmh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=kmh_to_kn).place(x=245, y=323)
 
@@ -3612,7 +3620,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3650,7 +3658,7 @@ class UnitConverter:
           entry_fts = tk.Entry(self.root, **entry_style);
           entry_fts.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=fts_to_ms).place(x=245, y=158)
 
@@ -3659,7 +3667,7 @@ class UnitConverter:
           entry_ms = tk.Entry(self.root, **entry_style);
           entry_ms.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ms_to_fts).place(x=245, y=323)
 
@@ -3674,7 +3682,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.speed_menu).place(x=15, y=8)
@@ -3711,7 +3719,7 @@ class UnitConverter:
           entry_mach = tk.Entry(self.root, **entry_style);
           entry_mach.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=mach_to_kmh).place(x=245, y=158)
 
@@ -3719,7 +3727,7 @@ class UnitConverter:
           entry_kmh = tk.Entry(self.root, **entry_style);
           entry_kmh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=kmh_to_mach).place(x=245, y=323)
 
@@ -3734,7 +3742,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -3773,7 +3781,7 @@ class UnitConverter:
           entry_j = tk.Entry(self.root, **entry_style);
           entry_j.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=j_to_ev).place(x=245, y=158)
 
@@ -3781,7 +3789,7 @@ class UnitConverter:
           entry_ev = tk.Entry(self.root, **entry_style);
           entry_ev.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=ev_to_j).place(x=245, y=323)
 
@@ -3796,7 +3804,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -3835,7 +3843,7 @@ class UnitConverter:
           entry_j = tk.Entry(self.root, **entry_style);
           entry_j.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=j_to_cal).place(x=245, y=158)
 
@@ -3843,7 +3851,7 @@ class UnitConverter:
           entry_cal = tk.Entry(self.root, **entry_style);
           entry_cal.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=cal_to_j).place(x=245, y=323)
 
@@ -3858,7 +3866,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -3897,7 +3905,7 @@ class UnitConverter:
           entry_j = tk.Entry(self.root, **entry_style);
           entry_j.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=j_to_kwh).place(x=245, y=158)
 
@@ -3905,7 +3913,7 @@ class UnitConverter:
           entry_kwh = tk.Entry(self.root, **entry_style);
           entry_kwh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=kwh_to_j).place(x=245, y=323)
 
@@ -3920,7 +3928,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -3959,7 +3967,7 @@ class UnitConverter:
           entry_kwh = tk.Entry(self.root, **entry_style);
           entry_kwh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=kwh_to_cal).place(x=245, y=158)
 
@@ -3967,7 +3975,7 @@ class UnitConverter:
           entry_cal = tk.Entry(self.root, **entry_style);
           entry_cal.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=cal_to_kwh).place(x=245, y=323)
 
@@ -3982,7 +3990,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -4021,7 +4029,7 @@ class UnitConverter:
           entry_j = tk.Entry(self.root, **entry_style);
           entry_j.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=j_to_wh).place(x=245, y=158)
 
@@ -4029,7 +4037,7 @@ class UnitConverter:
           entry_wh = tk.Entry(self.root, **entry_style);
           entry_wh.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=wh_to_j).place(x=245, y=323)
 
@@ -4044,7 +4052,7 @@ class UnitConverter:
           self.root.geometry("375x627")
           self.root.configure(background="#ffffff")
 
-          back_img = Image.open("Unit Converter Images/menu_bar_img.png").resize((33, 33))
+          back_img = Image.open(resource_path("Unit Converter Images/menu_bar_img.png")).resize((33, 33))
           self.back_img_button = ImageTk.PhotoImage(back_img)
           tk.Button(self.root, image=self.back_img_button,
                     bg='#ffffff', relief='flat', bd=0, command=self.energy_menu).place(x=15, y=8)
@@ -4087,7 +4095,7 @@ class UnitConverter:
           entry_btu = tk.Entry(self.root, **entry_style);
           entry_btu.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button1 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button1, bg='#ffffff', relief='flat', bd=0,
                     command=btu_to_j).place(x=245, y=158)
 
@@ -4096,7 +4104,7 @@ class UnitConverter:
           entry_j = tk.Entry(self.root, **entry_style);
           entry_j.pack(fill="x", padx=(30, 30), ipady=8)
           self.convert_img_button2 = ImageTk.PhotoImage(
-              Image.open("Unit Converter Images/convert.png").resize((105, 55)))
+              Image.open(resource_path("Unit Converter Images/convert.png")).resize((105, 55)))
           tk.Button(self.root, image=self.convert_img_button2, bg='#ffffff', relief='flat', bd=0,
                     command=j_to_btu).place(x=245, y=323)
 
